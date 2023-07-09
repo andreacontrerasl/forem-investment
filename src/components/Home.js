@@ -39,6 +39,7 @@ function Home(props) {
   return (
     <Box sx={{overflow: 'hidden'}}>
       <div className='main'>
+        <video src="\vcompress_3.MOV" autoPlay loop muted />
         <div className="overlay"></div>
         <div className="content" style={{width: isDesktop ? "50%" : "80%"}}>
           <Typography
