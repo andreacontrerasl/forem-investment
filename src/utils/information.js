@@ -216,4 +216,4 @@ export { home_data_EN, home_data_ES,
     about_data_EN, about_data_ES, 
     servicesPg_data_EN, 
     servicesPg_data_ES, 
-    }
+}
