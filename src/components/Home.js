@@ -1,4 +1,5 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
@@ -11,7 +12,46 @@ import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {home_data_EN, home_data_ES } from '../utils/information'
 
+const useStyles = makeStyles((theme) => ({
+  header: {
+    position: 'relative',
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  video: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    zIndex: -1,
+  },
+  videoOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Adjust the opacity and color as needed
+    zIndex: -1,
+  },
+  content: {
+    position: 'relative',
+    zIndex: 1,
+    textAlign: 'flex-start',
+    display: 'flex',
+    color: '#fff',
+    flexDirection: 'column',
+    marginLeft: '20px'
+  },
+}));
+
 function Home(props) {
+  const classes = useStyles()
   let datos
 
   let buttonTxt
@@ -25,9 +65,9 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": "Bespoke Bond Portfolio",
-    "header-p2": "for High Net Worth Investors",
-    "header-p3": "Welcome to Forem Investments LLC, the boutique fixed- income investment firm that specializes in building Al-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors",
+    "header-p1": props.data.language === 'EN' ? "Bespoke Bond Portfolio" : "Cartera de bonos a la medida",
+    "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para inversores de alto valor neto",
+    "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC, the boutique fixed- income investment firm that specializes in building Al-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors" : "Bienvenido a Forem Investments LLC, la firma boutique de inversiones de renta fija que se especializa en la creación de carteras de bonos personalizadas impulsadas por inteligencia artificial para familias de alto poder adquisitivo y asesores independientes.",
     "primary-action-EN": "Learn more",
     "primary-action-ES": "Ver más",
     ...props.content,
@@ -36,37 +76,43 @@ function Home(props) {
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
 
+  const video = document.getElementById('headerVideo');
+    video.play();
+
   return (
-    <Box sx={{overflow: 'hidden'}}>
-      <div className='main'>
-        <video src="\vcompress_3.MOV" autoPlay loop muted />
-        <div className="overlay"></div>
-        <div className="content" style={{width: isDesktop ? "50%" : "80%"}}>
-          <Typography
-            variant={isDesktop ? "h2": "h3"}
-            component="span"
-            style={{ fontWeight: "semibold", textShadow: "1px 0px 1px #000", color: "#ffff" }}>
-            {`${content["header-p1"]} `}
-          </Typography>
-          <Typography
-            variant={isDesktop ? "h2": "h3"}
-            component="span"
-            sx={{ fontWeight: "semibold", textShadow: "1px 0px 1px #000", color: "#ffff" }}>
-            {`${content["header-p2"]} `}
-          </Typography>
-          <Typography
-            variant={isDesktop ? "body1": "body1"}
-            component="span"
-            sx={{textShadow: "1px 0px 1px #000", color: "#ffff" }}>
-            {`${content["header-p3"]} `}
-          </Typography>
-          <Link to='/whyforem' style={{textDecoration: 'none'}}>
-          <Button variant='outlined' sx={{color: '#fff', textTransform: 'capitalize', borderColor: '#fff', marginTop: 2}}>
-            {buttonTxt}
-          </Button>
-          </Link>
+    <Box sx={{overflowX: 'hidden'}}>
+      <header className={classes.header}>
+        <video id="headerVideo" className={classes.video} autoPlay muted playsInline loop>
+          <source src="\vcompress_3.MOV" type="video/mp4" />
+        </video>
+        <div className={classes.videoOverlay} />
+          <div className={classes.content}>
+            <Typography
+              variant={isDesktop ? "h2": "h3"}
+              component="span"
+              style={{ fontWeight: "semibold", textShadow: "1px 0px 1px #000", color: "#ffff" }}>
+              {`${content["header-p1"]} `}
+            </Typography>
+            <Typography
+              variant={isDesktop ? "h2": "h3"}
+              component="span"
+              sx={{ fontWeight: "semibold", textShadow: "1px 0px 1px #000", color: "#ffff" }}>
+              {`${content["header-p2"]} `}
+            </Typography>
+            <Typography
+              variant={isDesktop ? "body1": "body1"}
+              component="span"
+              sx={{textShadow: "1px 0px 1px #000", color: "#ffff" }}>
+              {`${content["header-p3"]} `}
+            </Typography>
+            <Link to='/whyforem' style={{textDecoration: 'none'}}>
+              <Button variant='outlined' sx={{color: '#fff', textTransform: 'capitalize', borderColor: '#fff', marginTop: 2}}>
+                {buttonTxt}
+              </Button>
+            </Link>
         </div>
-    </div>
+      </header>
+      
     {datos.map((info) => (
       <>
       <Box sx={{marginTop: 2, textAlign: 'center', marginBottom: 3}}>

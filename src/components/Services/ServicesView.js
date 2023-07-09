@@ -41,7 +41,7 @@ function Services(props) {
           padding: 3, marginBottom: 2}}>
             {info.text1.map((service) => (
               <Grid item md={4} xs={6} >
-              <Stack direction='column' 
+              <Stack direction='column' sx={{display: 'flex', alignItems: !isDesktop && 'center'}}
               >
                 <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
                   <img alt="img" src={`${service.photo}`} 
@@ -55,7 +55,8 @@ function Services(props) {
                   </Typography>
                   {service?.descrition?.map((desc) => {
                     return (
-                      <Typography variant='body1' sx={{color: '#fff', }}>
+                      <Typography variant='body1' 
+                      sx={{color: '#fff', textAlign: !isDesktop && 'center'}}>
                       {`- ${desc}`}
                       </Typography>)
                   })}

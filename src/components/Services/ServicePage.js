@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTheme } from "@mui/material/styles"
+import useMediaQuery from "@mui/material/useMediaQuery"
 import {useLocation, useNavigate} from 'react-router-dom';
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
@@ -30,6 +32,9 @@ function ServicePage(props) {
     }
   })
 
+  const theme = useTheme()
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
+
   return (
     <Container disableGutters maxWidth>
       <Stack direction="row" spacing={1}
@@ -42,9 +47,12 @@ function ServicePage(props) {
         </Typography>
       </Stack>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
-      <Stack direction="row" spacing={2} 
+      <Stack direction={isDesktop ? "row" : "column"} spacing={2} 
       sx={{padding: 2, alignItems: 'center', maxWidth:'lg'}}>
-        <img alt="img" src={service_data?.photo} style={{borderRadius: '10px'}} />
+        <img alt="img" 
+        src={service_data?.photo} 
+        style={{borderRadius: '10px'}} 
+        width={ !isDesktop && 350} />
         <Stack direction="column">
         {service_data?.descrition?.map((desc) => {
           return (
