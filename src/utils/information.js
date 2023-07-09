@@ -105,20 +105,37 @@ const about_data_EN = [
 
 const about_data_ES = [
     {
-        banner1: `Tus metas son nuestros metas: ` ,
-        banner2: `Consigámoslas juntos`,
-        text1: "Forem es un asesor de inversiones registrado (RIA) independiente y de pago único. Creemos en la colaboración con bancos, agentes de bolsa, custodios y gestores de relaciones para beneficiar a nuestros clientes. Como asesor de inversiones registrado independiente, tenemos acuerdos y una amplia experiencia con varios custodios, como se muestra en la diapositiva. Sin embargo, es decisión de nuestros clientes seleccionar sus custodios preferidos, y no recibimos compensación de ellos. Nuestro objetivo principal es trabajar en el mejor interés de nuestros clientes y proporcionarles soluciones de inversión personalizadas que satisfagan sus necesidades y objetivos únicos.",
-        title2: "El Equipo",
+        banner1: "Nuestro enfoque es su Mejor Interés y su Mejor Interés de Renta Fija." ,
         text2: [{
+            photo: '/course1.jpg',
+            title: "Optimización de la cartera de bonos",
+            description: 'Nuestro servicio utiliza programación lineal para encontrar la mejor asignación de sus inversiones para obtener rendimientos óptimos.',
+            
+        },
+        {
+            photo: '/course2.jpg',
+            title: "Carteras de bonos a medida para personas de alto patrimonio neto",
+            description: 'Nuestro servicio de asesoramiento financiero personalizado brinda recomendaciones personalizadas para ayudarlo a alcanzar sus objetivos financieros y asegurar su futuro financiero.',
+            
+        },
+        {
+            photo: '/course3.jpg',
+            title: "Monitoreo de la cartera de bonos Al",
+            description: 'Nuestro servicio de monitoreo de cartera utiliza Al para rastrear inversiones y proporcionar alertas en tiempo real, lo que garantiza que su cartera se optimice continuamente.',
+            
+        },],
+        title2: "Nuestro Equipo",
+        text_random: "Forem Investments LLC fue fundada por un equipo de contadores experimentados apasionados por brindar soluciones personalizadas de inversión de renta fija a personas de alto patrimonio.",
+        text3: [{
             photo: "\Freddy.png",
             name: "Freddy Martinez",
-            position: 'Presidente & CEO',
+            position: 'President & CEO',
             description: ""
         },
         {
             photo: "\Freddy.png",
             name: "Freddy Martinez",
-            position: 'Presidente & CEO',
+            position: 'President & CEO',
             description: ""
         }]
     }
@@ -175,29 +192,29 @@ const servicesPg_data_ES = [
             id: "family-office",
             photo: "/course1.jpg",
             titleService: "Oficina Familiar",
-            descrition: [`Expertise: team of experienced professionals who can provide families with comprehensive financial advice.`, 
-                        `Personalized service: tailor their services to the specific needs of each family.`, 
-                        `Discretion: provide families with the discretion they need to manage their wealth.`,
-                        `Access to exclusive investment opportunities that are not available to the general public.`],
-            buttonText: 'Lear more',
+            descrition: [`Experiencia: equipo de profesionales experimentados que pueden brindar a las familias un asesoramiento financiero integral.`, 
+                        `Atención personalizada: adaptamos sus servicios a las necesidades específicas de cada familia.`, 
+                        `Discreción: proporcionar a las familias la discreción que necesitan para administrar su patrimonio.`,
+                        `Acceso a oportunidades de inversión exclusivas que no están disponibles para el público en general.`],
+            buttonText: 'Ver más',
         },
         {
             id: "investments-portfolio",
             photo: "/course2.jpg",
             titleService: "Portafolio de Inversiones",
-            descrition: [`AI Bond Research: AI driven software that gives credit risk, probability of credit ranting chances and price relative to peers.`, 
-            `ML on Equity selection: fundamental and technical analysis using in-house indicators and rankings for equity selection.`, 
-            `AI on Portfolio Monitoring: investment research software with access and interpreted data from public and private companies.`,],
-            buttonText: 'Lear more',
+            descrition: [`AI Bond Research: software impulsado por IA que brinda riesgo de crédito, probabilidad de oportunidades de crédito y precio en relación con sus pares.`, 
+            `ML sobre selección de renta variable: análisis fundamental y técnico utilizando indicadores y rankings internos para la selección de renta variable.`, 
+            `AI on Portfolio Monitoring: software de investigación de inversiones con acceso e interpretación de datos de empresas públicas y privadas.`,],
+            buttonText: 'Ver más',
         },
         {
             id: "custodian-data-aggregation",
             photo: "/course3.jpg",
             titleService: "Agregación de datos de custodios",
-            descrition: [`Enhanced risk management: complete view of your exposure to risk.`, 
-            `Improved performance reporting: single view of your investment’s performance and areas of improvements.`, 
-            `Increased compliance: complete view of your transactions.`,],
-            buttonText: 'Lear more',
+            descrition: [`Gestión de riesgos mejorada: visión completa de su exposición al riesgo.`, 
+            `Informes de rendimiento mejorados: vista única del rendimiento de su inversión y áreas de mejora.`, 
+            `Mayor cumplimiento: vista completa de sus transacciones.`,],
+            buttonText: 'Ver más',
         }],
         title2: `Asesores de inversión registrados a comisión`,
         description2:"Como asesores exclusivos, creemos que trabajar con nosotros ofrece varias ventajas a nuestros clientes, entre ellas:" ,

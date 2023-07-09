@@ -95,7 +95,7 @@ function Navbar(props) {
                 sx={{
                   fontWeight: "bold",
                   paddingRight: 2,
-                  color: (trigger) ? (props.data.language === 'ES' ? "#000" : "#d5d5d5") : (props.data.language === 'ES' ? "#fff" : "#d5d5d5"),
+                  color: (trigger) ? (props.data.language === 'ES' ? "#000" : "#d5d5d5") : (props.data.language === 'ES' ?(location.pathname === "/" ? "#fff" : "#000") : "#d5d5d5"),
                   cursor: 'pointer'
                 }}>ES</Typography>
               
