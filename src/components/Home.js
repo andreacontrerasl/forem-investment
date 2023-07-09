@@ -76,13 +76,10 @@ function Home(props) {
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
 
-  const video = document.getElementById('headerVideo');
-    video.play();
-
   return (
     <Box sx={{overflowX: 'hidden'}}>
       <header className={classes.header}>
-        <video id="headerVideo" className={classes.video} autoPlay muted playsInline loop>
+        <video id="headerVideo" className={classes.video} autoPlay muted loop>
           <source src="\vcompress_3.MOV" type="video/mp4" />
         </video>
         <div className={classes.videoOverlay} />
