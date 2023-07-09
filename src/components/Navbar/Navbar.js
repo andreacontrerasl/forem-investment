@@ -52,7 +52,7 @@ function Navbar(props) {
         <Toolbar>
             <Link to="/" style={{textDecoration: 'none'}}>
               <img
-                src={"\Picture1.png"}
+                src="\Picture1.png"
                 alt="Forem"
                 style={{width: isDesktop ? 150 : 120, height: isDesktop ? 55 : 45}}
               />

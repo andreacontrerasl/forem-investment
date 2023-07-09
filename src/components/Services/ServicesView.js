@@ -44,7 +44,7 @@ function Services(props) {
               <Stack direction='column' 
               >
                 <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
-                  <img src={`${service.photo}`} 
+                  <img alt="img" src={`${service.photo}`} 
                   style={{width: isDesktop ? 320 : "80%", borderRadius: 5}}/>
                 </Box>
                   <Typography variant='h6' 

@@ -89,13 +89,13 @@ const about_data_EN = [
         title2: "The Team",
         text_random: "Forem Investments LLC was founded by a team of experienced accountants with a passion for providing high-net-worth individuals with personalized fixed income investment solutions.",
         text3: [{
-            photo: "\Freddy.png",
+            photo: "Freddy.png",
             name: "Freddy Martinez",
             position: 'President & CEO',
             description: ""
         },
         {
-            photo: "\Freddy.png",
+            photo: "Freddy.png",
             name: "Freddy Martinez",
             position: 'President & CEO',
             description: ""
@@ -127,13 +127,13 @@ const about_data_ES = [
         title2: "Nuestro Equipo",
         text_random: "Forem Investments LLC fue fundada por un equipo de contadores experimentados apasionados por brindar soluciones personalizadas de inversión de renta fija a personas de alto patrimonio.",
         text3: [{
-            photo: "\Freddy.png",
+            photo: "Freddy.png",
             name: "Freddy Martinez",
             position: 'President & CEO',
             description: ""
         },
         {
-            photo: "\Freddy.png",
+            photo: "Freddy.png",
             name: "Freddy Martinez",
             position: 'President & CEO',
             description: ""

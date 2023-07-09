@@ -44,7 +44,7 @@ function ServicePage(props) {
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
       <Stack direction="row" spacing={2} 
       sx={{padding: 2, alignItems: 'center', maxWidth:'lg'}}>
-        <img src={service_data?.photo} style={{borderRadius: '10px'}} />
+        <img alt="img" src={service_data?.photo} style={{borderRadius: '10px'}} />
         <Stack direction="column">
         {service_data?.descrition?.map((desc) => {
           return (

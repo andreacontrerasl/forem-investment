@@ -47,7 +47,7 @@ function WhyForemView(props) {
               <Stack direction='column' 
               >
                 <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
-                  <img src={`${service.photo}`} 
+                  <img alt="img" src={`${service.photo}`} 
                   style={{width: isDesktop ? 320 : '80%', borderRadius: 5}}/>
                 </Box>
                   <Typography variant='h6' 
@@ -82,7 +82,7 @@ function WhyForemView(props) {
                   display: "flex",
                   cursor: 'pointer'
                 }}>
-                  <img src={`${person.photo}`} style={{width: 200, borderRadius: 5}}/>
+                  <img alt="img" src={`${person.photo}`} style={{width: 200, borderRadius: 5}}/>
                   <Typography variant='h6' sx={{color: '#000', fontWeight: 'bold'}}>
                   {`${person.name}`}
                   </Typography>

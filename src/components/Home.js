@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
@@ -81,22 +81,22 @@ function Home(props) {
             alignItems: 'center',
             marginTop: 2, padding: 1}}>
               <Grid item>
-                <img src='\JPM.png' width={150}/>
+                <img alt='jpm' src='\JPM.png' width={150}/>
               </Grid>
               <Grid item>
-                <img src='\USB.png' width={130}/>
+                <img alt='usb' src='\USB.png' width={130}/>
               </Grid>
               <Grid item>
-                <img src='\IB.png' width={200}/>
+                <img alt='ib' src='\IB.png' width={200}/>
               </Grid>
               <Grid item>
-                <img src='\RBC-Logo.png' width={130}/>
+                <img alt='rbc' src='\RBC-Logo.png' width={130}/>
               </Grid>
               <Grid item>
-                <img src='\Pershing+Logo.png' width={150}/>
+                <img alt='pershing' src='\Pershing+Logo.png' width={150}/>
               </Grid>
               <Grid item>
-                <img src='\mercantil.png' width={150}/>
+                <img alt='mercantil' src='\mercantil.png' width={150}/>
               </Grid>
             </Grid>
         </Container>

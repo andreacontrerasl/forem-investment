@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-import { useTheme } from "@mui/material/styles"
-import useMediaQuery from "@mui/material/useMediaQuery"
 import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
 import Button from "@mui/material/Button"
@@ -18,13 +16,6 @@ function AskAPIView(props) {
   const [currentPrompt, setCurrentPrompt] = useState("")
   const [apiResponse, setApiResponse] = useState("");
   const [loading, setLoading] = useState(false);
-  let datos
-
-  if(props.data.language === 'ES'){
-  }else{
-  }
-  const theme = useTheme()
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
 
   const handleChange = (e) => {
     setPrompt(e.target.value)
