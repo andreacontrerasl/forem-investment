@@ -14,6 +14,18 @@ let mainTheme = createTheme({
           paper: "#fff",
         },
     },
+    components: {
+      
+      MuiOutlinedInput: {
+        defaultProps: {},
+        styleOverrides: {
+          root: {
+            background: "#fff",
+          },rderColor: "#1D2639",
+          
+        },
+      },
+    },
     
   })
 

@@ -69,20 +69,20 @@ function Contact(props) {
           <Stack direction='row' spacing={2} sx={{width: 230}}>
               <LocalPhoneIcon sx={{color: '#ffff'}}/>
               <Link
-                  to="tel:305-680-0607"
+                  to="tel:305-462-4267 "
                   style={{ color: "#ffff", textDecoration: "none" }}>
               <Typography variant='body1' sx={{color: '#fff'}}>
-              {`+1 (305) 680-0607`}
+              {`+1 (305) 462-4267 `}
               </Typography>
               </Link>
           </Stack>
           <Stack direction='row' spacing={2} sx={{width: 230}}>
               <EmailIcon sx={{color: '#fff'}}/>
               <Link
-                  to="mailto:info@foremg.com"
+                  to="mailto:clientservice@foremg.com"
                   style={{ color: "#fff", textDecoration: "none" }}>
               <Typography variant='body1' sx={{color: '#fff'}}>
-              {`info@foremg.com`}
+              {`clientservice@foremg.com`}
               </Typography>
               </Link >
           </Stack>
@@ -173,7 +173,24 @@ function Contact(props) {
         </Button>
         </Stack>
         </Container>
-        </Box>
+      </Box>
+      <Box sx={{width: '100%', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      display: 'flex', 
+      paddingTop: 2, 
+      paddingBottom: 2, backgroundColor: '#192E47'}}>
+        <Button
+        variant="outlined"
+        sx={{width: isDesktop ? ('30%'): "100%", 
+        color: "#fff", borderColor: '#fff', 
+        "&:hover": {
+         color: "#192E47", 
+         backgroundColor: '#fff', borderColor: '#ffff'
+        }}}>
+          Get your own portfolio
+        </Button>
+      </Box>
     </>
   )
 }

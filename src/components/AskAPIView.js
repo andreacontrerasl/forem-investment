@@ -3,6 +3,7 @@ import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
 import Button from "@mui/material/Button"
 import TextField from "@mui/material/TextField"
+import Typography from "@mui/material/Typography"
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -26,7 +27,7 @@ function AskAPIView(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try {
+    if(prompt){try {
       const result = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
@@ -38,17 +39,16 @@ function AskAPIView(props) {
     } catch (e) {
       console.log(e);
       setApiResponse("Something is going wrong, Please try again.");
-    }
+    }}
     setLoading(false);
   };
 
   return (
-    <>
-      <Box 
+      <Stack direction={"column"} 
       sx={{backgroundColor: "#F2F8FF", 
-      width: '100%', 
-      minHeight:'80vh',
-      justifyContent: 'center', display: 'flex'}}>
+      width: '100%', minHeight: '80vh'}}>
+        <Typography sx={{textAlign: 'center', marginBottom: 10, marginTop: 10}}>Please ask to Ai any question relevant to your investments needs. </Typography>
+       
         <Stack 
         direction="column" 
         spacing={2} 
@@ -74,20 +74,25 @@ function AskAPIView(props) {
                 onChange={(e) => handleChange(e)}
                 value={prompt}
                 sx={{width: '85%'}}
-                placeholder="Please ask to openai"
+                placeholder="Ask to Ai.."
                 variant="outlined"
                 multiline
               />
               <Button
                 variant="contained"
                 onClick={(e) => handleSubmit(e)}
+                sx={{ 
+                  color: "#fff", borderColor: '#192E47', backgroundColor: '#192E47',
+                  "&:hover": {
+                   color: "#fff", 
+                   backgroundColor: '#192E47', borderColor: '#192E47'
+                }}}
               >
                 {loading ? "Generating..." : "Generate"}
               </Button>
           </Stack>
           </Stack>
-      </Box>
-    </>
+      </Stack>
   )
 }
 

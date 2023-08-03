@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link} from 'react-router-dom'
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
+import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
@@ -61,28 +63,49 @@ function WhyForemView(props) {
                   textAlign: !isDesktop && 'center'}}>
                   {`${service.description}`}
                   </Typography>
+                  <Link to={`/${service.id}`} style={{textDecoration: 'none'}} >
+                    <Button variant='outlined'
+                    sx={{width: 115, 
+                      marginRight: 2,
+                      marginTop: 3,
+                      textTransform: 'capitalize',
+                      color: "#fff", borderColor: "#fff", "&:hover": {
+                        color: "#000", 
+                        backgroundColor: '#fff', borderColor: '#fff'
+                      }}}>
+                      {`${service.button}`}
+                    </Button>
+                  </Link>
               </Stack>
           </Grid>
           ))}
         </Grid>
     </Box>
-      <Box sx={{ padding: 3, }}>
+      <Box sx={{ padding: 3, width:'100%'}}>
         <Typography variant='h3' color="#000">{`${info.title2}`}</Typography>
         <Typography variant='body1' 
         color="#000"
         sx={{marginTop: 1}}>
           {`${info.text_random}`}
         </Typography>
-        <Grid container direction='row' spacing={5} sx={{justifyContent: 'center', display: 'flex', marginTop: 2, marginBottom: 2}}>
+        <Grid container 
+        direction='row' 
+        columnGap={4} 
+        rowGap={3}
+        sx={{justifyContent: 'center', display: 'flex', 
+        marginTop: 2, marginBottom: 2, width:'100%'}}>
           {info.text3.map((person) => (
-          <Grid item sx={2}>
+            <Link to={`/${person.id}`} style={{textDecoration: 'none'}}>
+            <Grid item xs={11} md={4}  lg={10} 
+            sx={{display: 'flex', justifyContent: 'center'}}>
               <Stack direction='column' 
               sx={{
                   alignItems: "flex-start",
                   display: "flex",
                   cursor: 'pointer'
                 }}>
-                  <img alt="img" src={`${person.photo}`} style={{width: 200, borderRadius: 5}}/>
+                  <img alt="img" src={`${person.photo}`} 
+                  style={{width: 220, borderRadius: 5, height:'216px'}}/>
                   <Typography variant='h6' sx={{color: '#000', fontWeight: 'bold'}}>
                   {`${person.name}`}
                   </Typography>
@@ -90,7 +113,8 @@ function WhyForemView(props) {
                   {`${person.position}`}
                   </Typography>
               </Stack>
-          </Grid>
+            </Grid>
+            </Link>
           ))}
         </Grid>
       </Box>

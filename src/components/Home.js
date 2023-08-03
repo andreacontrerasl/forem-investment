@@ -65,7 +65,7 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": props.data.language === 'EN' ? "Bespoke Bond Portfolio" : "Cartera de bonos a la medida",
+    "header-p1": props.data.language === 'EN' ? "Bond Portfolio" : "Cartera de bonos",
     "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para inversores de alto valor neto",
     "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC, the boutique fixed- income investment firm that specializes in building Al-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors" : "Bienvenido a Forem Investments LLC, la firma boutique de inversiones de renta fija que se especializa en la creación de carteras de bonos personalizadas impulsadas por inteligencia artificial para familias de alto poder adquisitivo y asesores independientes.",
     "primary-action-EN": "Learn more",
@@ -103,7 +103,14 @@ function Home(props) {
               {`${content["header-p3"]} `}
             </Typography>
             <Link to='/whyforem' style={{textDecoration: 'none'}}>
-              <Button variant='outlined' sx={{color: '#fff', textTransform: 'capitalize', borderColor: '#fff', marginTop: 2}}>
+              <Button variant='outlined' 
+              sx={{color: '#fff', 
+              textTransform: 'capitalize', 
+              borderColor: '#fff', marginTop: 2, 
+              "&:hover": {
+                color: "#000", 
+                backgroundColor: '#fff', borderColor: '#fff'
+              }}}>
                 {buttonTxt}
               </Button>
             </Link>
@@ -185,7 +192,11 @@ function Home(props) {
                   borderColor: '#fff', 
                   marginRight: 2,
                   marginTop: 3,
-                  textTransform: 'capitalize'}}>
+                  textTransform: 'capitalize',
+                  "&:hover": {
+                    color: "#000", 
+                    backgroundColor: '#fff', borderColor: '#fff'
+                  }}}>
                   {`${service.buttonText}`}
                 </Button>
                 </Link>

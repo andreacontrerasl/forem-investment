@@ -38,7 +38,7 @@ function Navbar(props) {
     } else if (location.pathname === "/services") {
       setTabValue("Our Services")
     } else if (location.pathname === "/askai") {
-      setTabValue("Ask AI GPT")
+      setTabValue("Ask to AI")
     } else if (location.pathname === "/contact") {
       setTabValue("Contact")
     }
@@ -73,9 +73,11 @@ function Navbar(props) {
                   </Typography>
                 </Link>
               ))}
+              <Link to="https://main.yhlsoft.com/auth/users/sign_in">
               <Button variant='outlined'
                 sx={{width: 120, 
                 textTransform: 'capitalize'}}>Client Login</Button>
+              </Link>
               <Typography
                 onClick={() => props.data.setLanguage('EN')}
                 sx={{

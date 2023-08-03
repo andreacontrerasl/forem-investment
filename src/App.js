@@ -11,6 +11,8 @@ import mainTheme from './styles/theme/mainTheme';
 import AskAPIView from './components/AskAPIView';
 import WhyForemView from './components/WhyForem/WhyForemView';
 import ServicePage from './components/Services/ServicePage'
+import PersonInformation from './components/WhyForem/PersonInformation';
+import AboutView from './components/WhyForem/AboutView';
 
 function App() {
   const [language, setLanguage] = useState('EN')
@@ -27,6 +29,12 @@ function App() {
           <Route path='/family-office' element={<ServicePage data={{language}} />} />
           <Route path='/investments-portfolio' element={<ServicePage data={{language}} />} />
           <Route path='/custodian-data-aggregation' element={<ServicePage data={{language}} />} />
+          <Route path="/bespoke" element={<AboutView data={{language}} />} />
+          <Route path="/bond-portfolio-optimization" element={<AboutView data={{language}} />} />
+          <Route path="/ai-pond-portfolio" element={<AboutView data={{language}} />} />
+          <Route path="/freddy-martinez" element={<PersonInformation data={{language}} />} />
+          <Route path="/bernardo-perez" element={<PersonInformation data={{language}} />} />
+          <Route path="/michele-di-carlo" element={<PersonInformation data={{language}} />} />
         </Routes>
         <FooterView />
       </Router>

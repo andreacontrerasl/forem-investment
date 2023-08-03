@@ -66,7 +66,10 @@ function Services(props) {
                       marginRight: 2,
                       marginTop: 3,
                       textTransform: 'capitalize',
-                      color: "#fff", borderColor: "#fff"}}>
+                      color: "#fff", borderColor: "#fff", "&:hover": {
+                        color: "#000", 
+                        backgroundColor: '#fff', borderColor: '#fff'
+                      }}}>
                       {`${service.buttonText}`}
                     </Button>
                   </Link>
@@ -106,6 +109,23 @@ function Services(props) {
       })}
       </Container>
     </Stack>
+    <Box sx={{width: '100%', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      display: 'flex', 
+      paddingTop: 2, 
+      paddingBottom: 2, backgroundColor: '#192E47'}}>
+        <Button
+        variant="outlined"
+        sx={{width: isDesktop ? ('30%'): "100%", 
+        color: "#fff", borderColor: '#fff', 
+        "&:hover": {
+         color: "#192E47", 
+         backgroundColor: '#fff', borderColor: '#ffff'
+        }}}>
+          Get your own portfolio
+        </Button>
+      </Box>
       
       </>
     )})}

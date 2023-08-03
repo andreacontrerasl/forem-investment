@@ -9,7 +9,12 @@ import Divider from "@mui/material/Divider"
 import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import CopyrightIcon from "@mui/icons-material/Copyright"
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { HERO_DRAWER_OPTIONS } from '../Navbar/constants'
+
 
 function FooterView() {
   const theme = useTheme()
@@ -59,27 +64,54 @@ function FooterView() {
         </Stack>
       </Grid>
     </Grid>
+    
     <Divider sx={{paddingTop: 2, marginLeft: 2, marginRight: 2}}/>
-      <Stack direction='row' spacing={1} 
-      sx={{alignItems: 'center', 
-      direction: 'flex', 
-      padding: "10px 20px 10px 20px"}}>
-        {!isDesktop && 
+      {!isDesktop && 
         <Link to="/" style={{textDecoration: 'none'}}>
           <img
           src="\Picture1.png"
           alt="Forem"
-          style={{width: isDesktop ? 120 : 80, height: isDesktop ? 45 : 35}}
+          style={{width: isDesktop ? 120 : 80, height: isDesktop ? 45 : 35, marginLeft: 18, marginTop: 4}}
           />
         </Link>}
-        <CopyrightIcon fontSize="sm" 
-        sx={{color: '#B1B1B1', 
-        paddingTop: !isDesktop && 1, 
-        paddingLeft: !isDesktop && 0.5}}/>
-        <Typography variant='caption' sx={{color: '#B1B1B1', paddingTop: isDesktop ? 0.2 : 1.2}}>
-            {`2023 Forem Investments LLC.`}
-        </Typography>
+      <Stack direction='row' spacing={1} 
+      sx={{alignItems: 'center', 
+      direction: 'flex', 
+      padding: "10px 20px 5px 20px"}}>
+        
+        <Box sx={{display: 'flex', alignItems: 'center', marginRight: 'auto'}}>
+          <CopyrightIcon fontSize="sm" 
+          sx={{color: '#B1B1B1', 
+          paddingTop: !isDesktop && 1, 
+          paddingRight: 0.5,}}/>
+          <Typography variant='caption' 
+          sx={{color: '#B1B1B1', paddingTop: isDesktop ? 0.2 : 1.2}}>
+              {`2023 Forem Investments LLC.`}
+          </Typography>
+        </Box>
+        
+        <Box sx={{marginLeft: 'auto'}}>
+          <LinkedInIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
+          <InstagramIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
+          <FacebookIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
+          <TwitterIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
+        </Box>
+        
     </Stack>
+      <Box sx={{marginLeft: 2.7, paddingBottom: 2}}>
+      <Typography variant='caption' 
+          sx={{color: '#B1B1B1', marginRight: 1, cursor: 'pointer'}}>
+              {`Private Policy`}
+          </Typography>
+          <Typography variant='caption' 
+          sx={{color: '#B1B1B1', marginRight: 1}}>
+              {`|`}
+          </Typography>
+          <Typography variant='caption' 
+          sx={{color: '#B1B1B1', cursor: 'pointer'}}>
+              {`ADV`}
+        </Typography>
+        </Box>
     </Box>
   )
 }
