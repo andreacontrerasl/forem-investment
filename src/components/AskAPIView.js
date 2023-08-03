@@ -47,7 +47,10 @@ function AskAPIView(props) {
       <Stack direction={"column"} 
       sx={{backgroundColor: "#F2F8FF", 
       width: '100%', minHeight: '80vh'}}>
-        <Typography sx={{textAlign: 'center', marginBottom: 10, marginTop: 10}}>Please ask to Ai any question relevant to your investments needs. </Typography>
+        <Typography sx={{textAlign: 'center', 
+        marginBottom: 10, marginTop: 10}}>
+          Please ask to Ai any question relevant to your investments needs. 
+        </Typography>
        
         <Stack 
         direction="column" 

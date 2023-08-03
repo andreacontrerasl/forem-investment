@@ -73,10 +73,17 @@ function Navbar(props) {
                   </Typography>
                 </Link>
               ))}
-              <Link to="https://main.yhlsoft.com/auth/users/sign_in">
+              <Link to="https://main.yhlsoft.com/auth/users/sign_in" 
+              style={{color: '#fff', textDecoration: 'none'}}>
               <Button variant='outlined'
                 sx={{width: 120, 
-                textTransform: 'capitalize'}}>Client Login</Button>
+                textTransform: 'capitalize', 
+                color: '#fff', 
+                borderColor: '#fff',
+                "&:hover": {
+                  color: "#192E47", 
+                  backgroundColor: '#fff', borderColor: '#fff'
+               }}}>Client Login</Button>
               </Link>
               <Typography
                 onClick={() => props.data.setLanguage('EN')}
