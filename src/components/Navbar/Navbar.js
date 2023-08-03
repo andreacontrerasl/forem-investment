@@ -78,11 +78,11 @@ function Navbar(props) {
               <Button variant='outlined'
                 sx={{width: 120, 
                 textTransform: 'capitalize', 
-                color: '#fff', 
-                borderColor: '#fff',
+                color: location.pathname === "/" ? ((trigger) ? "#192E47" : "#fff"): "#192E47", 
+                borderColor: location.pathname === "/" ? ((trigger) ? "#192E47" : "#fff"): "#192E47",
                 "&:hover": {
-                  color: "#192E47", 
-                  backgroundColor: '#fff', borderColor: '#fff'
+                  color: location.pathname === "/" ? ((trigger) ? "#fff" : "#192E47"): "#fff",
+                  backgroundColor: location.pathname === "/" ? ((trigger) ? "#192E47" : "#fff"): "#192E47", borderColor: location.pathname === "/" ? ((trigger) ? "#192E47" : "#fff"): "#192E47"
                }}}>Client Login</Button>
               </Link>
               <Typography
