@@ -81,7 +81,7 @@ function WhyForemView(props) {
           ))}
         </Grid>
     </Box>
-      <Box sx={{ padding: 3, width:'100%'}}>
+      <Box sx={{ padding: 3}}>
         <Typography variant='h3' color="#000">{`${info.title2}`}</Typography>
         <Typography variant='body1' 
         color="#000"
@@ -93,7 +93,7 @@ function WhyForemView(props) {
         columnGap={4} 
         rowGap={3}
         sx={{justifyContent: 'center', display: 'flex', 
-        marginTop: 2, marginBottom: 2, width:'100%'}}>
+        marginTop: 2, marginBottom: 2}}>
           {info.text3.map((person) => (
             <Link to={`/${person.id}`} style={{textDecoration: 'none'}}>
             <Grid item xs={11} md={4}  lg={10} 
@@ -117,6 +117,13 @@ function WhyForemView(props) {
             </Link>
           ))}
         </Grid>
+      </Box>
+      <Box 
+      sx={{
+      display: 'flex', 
+      justifyContent: 'center', 
+      backgroundColor: '#192E47'}}>
+        <img src='/whyforem.png' width={!isDesktop && 440} />
       </Box>
       </>
     ))}
