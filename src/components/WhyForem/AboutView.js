@@ -48,18 +48,19 @@ function AboutView(props) {
       </Stack>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
       <Stack 
-      direction={(about_Data?.photos.length > 1 && isDesktop) ? "row" : 'column'} 
+      direction={isDesktop ? "row" : 'column'} 
       spacing={2} 
       sx={{padding: 2, alignItems: 'center', maxWidth:'lg'}}>
         <Stack direction={'column'} sx={{display: 'grid'}}>
         {about_Data?.photos.map((photo)=> (
           <img alt="img" 
           src={`/${photo} `}
-          style={{borderRadius: '10px'}} 
+          style={{borderRadius: '5px', paddingBottom: '10px'}} 
           width={ isDesktop ? 400 : 300} />
         ))}
         </Stack>
-        <Typography variant='body1' sx={{color: '#000', textAlign: 'center'}}>
+        <Typography variant='body1' 
+        sx={{color: '#000', textAlign: !isDesktop && 'center'}}>
         {`${about_Data?.description2}`}
         </Typography>
         

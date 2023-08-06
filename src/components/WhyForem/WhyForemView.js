@@ -47,10 +47,12 @@ function WhyForemView(props) {
           {info.text2.map((service) => (
           <Grid item md={4} xs={6} >
               <Stack direction='column' 
+              sx={{display: 'flex', alignItems: !isDesktop && 'center'}}
               >
                 <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
                   <img alt="img" src={`${service.photo}`} 
-                  style={{width: isDesktop ? 320 : '80%', borderRadius: 5}}/>
+                  style={{width: isDesktop ? 370 : '85%', borderRadius: 5, 
+                  height: isDesktop ? '290px' : '240px'}}/>
                 </Box>
                   <Typography variant='h6' 
                   sx={{color: '#fff', 
@@ -118,13 +120,23 @@ function WhyForemView(props) {
           ))}
         </Grid>
       </Box>
-      <Box 
+      <Stack
+      direction={"column"} 
       sx={{
       display: 'flex', 
       justifyContent: 'center', 
-      backgroundColor: '#192E47'}}>
-        <img src='/whyforem.png' width={!isDesktop && 440} />
-      </Box>
+      backgroundColor: '#192E47', 
+      alignItems: 'center', padding: 2}}>
+        <Typography variant={isDesktop ? 'h3' : 'h4'} color={"#fff"} 
+        sx={{textAlign: 'center', paddingTop: 1}}>
+          {info.title3}
+        </Typography>
+        <Typography variant='body1' color={"#fff"} 
+        sx={{textAlign: 'center', paddingTop: 2, paddingBottom: 4}}>
+          {info.text4}
+        </Typography>
+        <img src='/whyforem.png' width={isDesktop ? 700: 400} />
+      </Stack>
       </>
     ))}
     </>
