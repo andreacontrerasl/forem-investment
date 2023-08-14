@@ -71,13 +71,13 @@ function ServicePage(props) {
               sx={{
                 backgroundColor: '#192E47', 
               borderRadius: isDesktop ?  '60px' : '60px', 
-              height: isDesktop ? '110px' : '115px', 
+              height: isDesktop ? '117px' : '125px', 
               display: 'flex', alignItems: 'center'}}>
                 <Box 
                 sx={{backgroundColor: 'rgb(217, 217, 217, .2)', 
                 borderRadius: '50%', 
-                padding: isDesktop ? "0px 32px 0px 32px" : "0px 32px 0px 32px", 
-                display: 'flex', alignItems: 'center', height: isDesktop ? '110px' : '115px',}}>
+                padding: isDesktop ? "0px 36px 0px 36px" : "0px 38px 0px 38px", 
+                display: 'flex', alignItems: 'center', height: isDesktop ? '117px' : '125px',}}>
                 <>{desc.icon}</>
 
                 </Box>

@@ -112,7 +112,7 @@ function WhyForemView(props) {
          color: "#192E47", 
          backgroundColor: '#fff', borderColor: '#ffff'
         }}}>
-          Get your own portfolio
+          {props.data.language === 'EN' ? "Get your own portfolio" : "Consigue tu propio portafolio"}
         </Button>
         </Link>
       </Box>

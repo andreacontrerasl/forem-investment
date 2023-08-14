@@ -66,9 +66,9 @@ function Home(props) {
 
   const content = {
     "header-p1": props.data.language === 'EN' ? "Bespoke Investment Portfolios" : "Cartera de bonos",
-    "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para Inversores de Alto Patrimonio",
+    "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para Inversionistas de Alto Patrimonio",
     "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC" : "Bienvenido a Forem Investments LLC",
-    "header-p4": props.data.language === 'EN' ? "The fixed-income investment boutique specializing in building Ai-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors." : "La firma boutique de inversiones de renta fija que se especializa en la creación de carteras de bonos personalizadas impulsadas por inteligencia artificial para familias de alto poder adquisitivo y asesores independientes.",
+    "header-p4": props.data.language === 'EN' ? "The fixed-income investment boutique specializing in building Ai-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors." : "La boutique de inversión de renta fija que se especializa en crear carteras de bonos personalizadas impulsadas por IA para familias de alto valor neto y asesores independientes.",
     "primary-action-EN": "Learn more",
     "primary-action-ES": "Ver más",
     ...props.content,
@@ -234,7 +234,7 @@ function Home(props) {
          color: "#fff", 
          backgroundColor: '#192E47', borderColor: '#192E47'
         }}}>
-          Get your own portfolio
+          {props.data.language === 'EN' ? "Get your own portfolio" : "Consigue tu propio portafolio"}
         </Button>
         </Link>
       </Box>

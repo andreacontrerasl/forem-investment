@@ -106,7 +106,7 @@ function Contact(props) {
     </Box>
       <Box sx={{backgroundColor: '#fff', padding: 2}}>
       <Divider color="#192E47" sx={{paddingTop: 1}} variant='middle'>
-          <Typography variant='h6' color="#192E47">{`Send us a message`}</Typography>
+          <Typography variant='h6' color="#192E47">{props.data.language === 'ES' ? "Envíanos un mensaje" : `Send us a message`}</Typography>
         </Divider>
       <Container maxWidth="md" sx={{marginTop: 3}}>
         <Grid container direction={isDesktop ? "row" : "column"} spacing={2} sx={{marginBottom: 2}}>
@@ -177,7 +177,7 @@ function Contact(props) {
           color: "#fff", 
           backgroundColor: '#192E47', borderColor: '#192E47'
         }}}>
-          Send message
+          {props.data.language === 'ES' ? "Enviar mensaje" : "Send message"}
         </Button>
         </Stack>
         </Container>
