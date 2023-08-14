@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
 import Button from "@mui/material/Button"
@@ -8,6 +8,15 @@ import Typography from "@mui/material/Typography"
 const { Configuration, OpenAIApi } = require("openai");
 
 function AskAPIView(props) {
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
+
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
   });

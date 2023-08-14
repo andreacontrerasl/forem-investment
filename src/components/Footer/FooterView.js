@@ -2,7 +2,6 @@ import React from 'react'
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {Link} from 'react-router-dom';
-import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Divider from "@mui/material/Divider"
@@ -20,7 +19,7 @@ function FooterView() {
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
   return (
-    <Box sx={{backgroundColor: "#363636"}}>
+    <Box sx={{backgroundColor: "#363636", width: '100%', marginTop: 'auto',}}>
     <Grid
       container
       direction={isDesktop ? "row" : "column"}
@@ -99,18 +98,24 @@ function FooterView() {
         
     </Stack>
       <Box sx={{marginLeft: 2.7, paddingBottom: 2}}>
-      <Typography variant='caption' 
+        <Link style={{textDecoration: 'none', color: '#B1B1B1'}}
+        to="https://docs.google.com/document/d/1-urc_W-HQp4B1bHQwco2csrnCLQNq6DN3tQMAeUBu1Y/edit?usp=sharing">
+          <Typography variant='caption' 
           sx={{color: '#B1B1B1', marginRight: 1, cursor: 'pointer'}}>
               {`Private Policy`}
           </Typography>
+        </Link>
           <Typography variant='caption' 
           sx={{color: '#B1B1B1', marginRight: 1}}>
               {`|`}
           </Typography>
+          <Link style={{textDecoration: 'none', color: '#B1B1B1'}}
+        to="https://docs.google.com/document/d/1w-KC-ma46Dh0TSH1inoNWbOgaXC5e7pQwvF1_XfOnCI/edit?usp=sharing">
           <Typography variant='caption' 
           sx={{color: '#B1B1B1', cursor: 'pointer'}}>
               {`ADV`}
         </Typography>
+        </Link>
         </Box>
     </Box>
   )

@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {useLocation, useNavigate} from 'react-router-dom';
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
+import Divider from "@mui/material/Divider"
 import Typography from "@mui/material/Typography"
 import IconButton from "@mui/material/IconButton"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { about_data_EN, about_data_ES} from '../../utils/information'
 
 function PersonInformation(props) {
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
     let datos
 
     if(props.data.language === 'ES'){
@@ -38,7 +47,7 @@ function PersonInformation(props) {
   console.log(person_Data)
 
   return (
-    <Container disableGutters maxWidth>
+    <Container disableGutters maxWidth >
       <Stack direction="row" spacing={1}
       sx={{backgroundColor: '#2D4080', padding: 2, alignItems: 'center'}}>
         <IconButton onClick={() => navigate(-1)}>
@@ -48,30 +57,39 @@ function PersonInformation(props) {
           Meet our team
         </Typography>
       </Stack>
-      <Box sx={{display: 'flex', justifyContent: 'center'}}>
+      <Box sx={{display: 'flex', 
+      alignItems: 'center', 
+      flexDirection: 'column' }}>
+      <Box 
+      maxWidth="md"
+      sx={{display: 'flex', 
+      justifyContent: 'center', 
+      flexDirection: 'column' }}>
       <Stack direction={isDesktop ? "row" : "column"} spacing={2} 
       sx={{padding: 2, alignItems: 'center', maxWidth:'lg'}}>
-        <Stack direction={"column"}>
         <img alt="img" 
         src={person_Data?.photo} 
-        style={{borderRadius: '10px'}} 
-        width={ isDesktop ? 350 : 250} />
-        <Typography variant='body1' sx={{color: '#000', fontWeight: 'bold', marginTop: 1}}>
+        style={{borderRadius: '5px'}} 
+        width={ isDesktop ? 360 : 250} />
+        <Stack direction="column">
+        <Typography variant='h4' sx={{color: '#2A63B0', fontWeight: 'bold', marginTop: 1}}>
           {person_Data.name}
         </Typography>
-        <Typography variant='body1' sx={{color: '#606060', fontStyle: 'italic'}}>
+        <Typography variant='h6' sx={{color: '#606060', fontStyle: 'italic'}}>
           {person_Data.position}
         </Typography>
         </Stack>
-        <Stack direction="column">
+      </Stack>
+      <Stack direction="column" rowGap={1}
+      sx={{marginBottom: 3, paddingLeft: 2, paddingRight: 2}}>
         {person_Data?.description?.map((desc) => {
           return (
-            <Typography variant='body1' sx={{color: '#000', }}>
+            <Typography  sx={{color: '#000', fontSize: '18px'}}>
             {`- ${desc}`}
             </Typography>)
         })}
         </Stack>
-      </Stack>
+      </Box>
       </Box>
     </Container>
   )

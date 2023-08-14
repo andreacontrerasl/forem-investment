@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {useLocation, useNavigate} from 'react-router-dom';
@@ -11,6 +11,15 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { servicesPg_data_EN, servicesPg_data_ES } from '../../utils/information'
 
 function ServicePage(props) {
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
+
   let datos
 
   if(props.data.language === 'ES'){
@@ -36,7 +45,7 @@ function ServicePage(props) {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
 
   return (
-    <Container disableGutters maxWidth>
+    <Box width="100%">
       <Stack direction="row" spacing={1}
       sx={{backgroundColor: '#2D4080', padding: 2, alignItems: 'center'}}>
         <IconButton onClick={() => navigate(-1)}>
@@ -48,22 +57,45 @@ function ServicePage(props) {
       </Stack>
       <Box sx={{display: 'flex', justifyContent: 'center'}}>
       <Stack direction={isDesktop ? "row" : "column"} spacing={2} 
-      sx={{padding: 2, alignItems: 'center', maxWidth:'lg'}}>
-        <img alt="img" 
+      sx={{padding: 2, alignItems: 'center', maxWidth:'lg', display: 'flex', justifyContent: 'center'}}>
+        {!isDesktop && <img alt="img" 
         src={service_data?.photo} 
         style={{borderRadius: '10px'}} 
-        width={ !isDesktop && 350} />
-        <Stack direction="column">
+        width={400} />}
+        <Stack direction="column" rowGap={2}>
+        
         {service_data?.descrition?.map((desc) => {
           return (
-            <Typography variant='body1' sx={{color: '#000', }}>
-            {`- ${desc}`}
-            </Typography>)
+            <Stack direction="row" 
+              columnGap={2}
+              sx={{
+                backgroundColor: '#192E47', 
+              borderRadius: isDesktop ?  '60px' : '60px', 
+              height: isDesktop ? '110px' : '115px', 
+              display: 'flex', alignItems: 'center'}}>
+                <Box 
+                sx={{backgroundColor: 'rgb(217, 217, 217, .2)', 
+                borderRadius: '50%', 
+                padding: isDesktop ? "0px 32px 0px 32px" : "0px 32px 0px 32px", 
+                display: 'flex', alignItems: 'center', height: isDesktop ? '110px' : '115px',}}>
+                <>{desc.icon}</>
+
+                </Box>
+                <Typography variant={isDesktop ? 'body1' : 'body2'} 
+                  sx={{color: '#fff', marginRight: 2}}>
+                  {`${desc.text}`}
+                </Typography>
+              </Stack>)
         })}
         </Stack>
+        {isDesktop && <img alt="img" 
+        src={service_data?.photo} 
+        style={{borderRadius: '10px'}} 
+        width={ isDesktop ? 550 : 350} />}
+        
       </Stack>
       </Box>
-    </Container>
+    </Box>
   )
 }
 

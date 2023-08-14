@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import Container from "@mui/material/Container"
@@ -16,6 +16,14 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import FormInputText from './common/FormInputText'
 
 function Contact(props) {
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
+
   const content = {
     "header-p1": props.data.language === 'ES' ? "Tienes preguntas?" : "Have questions?",
     "header-p2": props.data.language === 'ES' ? "No dudes en llamarnos o enviarnos un correo electrónico, o utilice nuestro formulario de contacto para enviarnos un mensaje. ¡Esperamos escuchar de ti!" : "Please feel free to call or email us, or use our contact form to get in touch with us. We look forward to hearing from you!",
@@ -173,23 +181,6 @@ function Contact(props) {
         </Button>
         </Stack>
         </Container>
-      </Box>
-      <Box sx={{width: '100%', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', 
-      paddingTop: 2, 
-      paddingBottom: 2, backgroundColor: '#192E47'}}>
-        <Button
-        variant="outlined"
-        sx={{width: isDesktop ? ('30%'): "100%", 
-        color: "#fff", borderColor: '#fff', 
-        "&:hover": {
-         color: "#192E47", 
-         backgroundColor: '#fff', borderColor: '#ffff'
-        }}}>
-          Get your own portfolio
-        </Button>
       </Box>
     </>
   )

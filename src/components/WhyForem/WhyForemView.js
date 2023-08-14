@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link} from 'react-router-dom'
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
@@ -10,6 +10,14 @@ import useMediaQuery from "@mui/material/useMediaQuery"
 import { about_data_EN, about_data_ES} from '../../utils/information'
 
 function WhyForemView(props) {
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
 
   let datos
 
@@ -26,63 +34,24 @@ function WhyForemView(props) {
     <>
     {datos.map((info) => (
       <>
-    <Box sx={{backgroundColor: '#192E47', paddingBottom: 2}}>
-      <Box
-      sx={{paddingTop: 3, paddingRight: 3, paddingLeft: 3}}>
-        <Stack >
-          <Typography
-            variant="h4"
-            sx={{ 
-            color: "#fff", textAlign: !isDesktop && 'center' }}>
-            {`${info.banner1} `}
-          </Typography>
-        </Stack>
-      </Box>
-      <Grid container 
-      direction={isDesktop ? 'row' : "column"} 
-      spacing={3} 
-      sx={{justifyContent: 'center', 
+      <Stack
+      direction={"column"} 
+      sx={{
       display: 'flex', 
-      padding: 3, marginBottom: 2}}>
-          {info.text2.map((service) => (
-          <Grid item md={4} xs={6} >
-              <Stack direction='column' 
-              sx={{display: 'flex', alignItems: !isDesktop && 'center'}}
-              >
-                <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
-                  <img alt="img" src={`${service.photo}`} 
-                  style={{width: isDesktop ? 370 : '85%', borderRadius: 5, 
-                  height: isDesktop ? '290px' : '240px'}}/>
-                </Box>
-                  <Typography variant='h6' 
-                  sx={{color: '#fff', 
-                  fontWeight: 'bold', 
-                  marginTop: 2, textAlign: !isDesktop && 'center'}}>
-                  {`${service.title}`}
-                  </Typography>
-                  <Typography variant='body1' 
-                  sx={{color: '#fff', 
-                  textAlign: !isDesktop && 'center'}}>
-                  {`${service.description}`}
-                  </Typography>
-                  <Link to={`/${service.id}`} style={{textDecoration: 'none'}} >
-                    <Button variant='outlined'
-                    sx={{width: 115, 
-                      marginRight: 2,
-                      marginTop: 3,
-                      textTransform: 'capitalize',
-                      color: "#fff", borderColor: "#fff", "&:hover": {
-                        color: "#000", 
-                        backgroundColor: '#fff', borderColor: '#fff'
-                      }}}>
-                      {`${service.button}`}
-                    </Button>
-                  </Link>
-              </Stack>
-          </Grid>
-          ))}
-        </Grid>
-    </Box>
+      justifyContent: 'center', 
+      backgroundColor: '#192E47', 
+      alignItems: 'center', padding: 2}}>
+        <Typography variant={isDesktop ? 'h3' : 'h4'} color={"#fff"} 
+        sx={{textAlign: 'center', paddingTop: 1}}>
+          {info.title3}
+        </Typography>
+        <Typography variant='body1' color={"#fff"} 
+        sx={{textAlign: 'center', paddingTop: 2, paddingBottom: 4}}>
+          {info.text4}
+        </Typography>
+        <img src='/whyforem.jpg' width={isDesktop ? 700: 400} />
+      </Stack>
+    
       <Box sx={{ padding: 3}}>
         <Typography variant='h3' color="#000">{`${info.title2}`}</Typography>
         <Typography variant='body1' 
@@ -120,23 +89,33 @@ function WhyForemView(props) {
           ))}
         </Grid>
       </Box>
-      <Stack
-      direction={"column"} 
-      sx={{
-      display: 'flex', 
+      <Box sx={{width: '100%', 
       justifyContent: 'center', 
-      backgroundColor: '#192E47', 
-      alignItems: 'center', padding: 2}}>
-        <Typography variant={isDesktop ? 'h3' : 'h4'} color={"#fff"} 
-        sx={{textAlign: 'center', paddingTop: 1}}>
-          {info.title3}
-        </Typography>
-        <Typography variant='body1' color={"#fff"} 
-        sx={{textAlign: 'center', paddingTop: 2, paddingBottom: 4}}>
-          {info.text4}
-        </Typography>
-        <img src='/whyforem.png' width={isDesktop ? 700: 400} />
-      </Stack>
+      alignItems: 'center', 
+      display: 'flex', 
+      paddingTop: 2, 
+      paddingBottom: 2, backgroundColor: '#192E47'}}>
+        <Link to='/contact' 
+        style={{width: '100%', 
+        textDecoration: 'none', 
+        justifyContent: 'center', 
+      alignItems: 'center', 
+      display: 'flex', color: "#fff",  
+      "&:hover": {
+        color: "#192E47", 
+       }}}>
+        <Button
+        variant="outlined"
+        sx={{width: isDesktop ? ('30%'): "100%", 
+        color: "#fff", borderColor: '#fff', 
+        "&:hover": {
+         color: "#192E47", 
+         backgroundColor: '#fff', borderColor: '#ffff'
+        }}}>
+          Get your own portfolio
+        </Button>
+        </Link>
+      </Box>
       </>
     ))}
     </>

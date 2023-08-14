@@ -1,6 +1,5 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link} from 'react-router-dom'
-import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
@@ -11,6 +10,14 @@ import useMediaQuery from "@mui/material/useMediaQuery"
 import { servicesPg_data_ES, servicesPg_data_EN} from '../../utils/information'
 
 function Services(props) {
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
 
   let datos
 
@@ -45,7 +52,7 @@ function Services(props) {
               >
                 <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
                   <img alt="img" src={`${service.photo}`} 
-                  style={{width: isDesktop ? 320 : "80%", borderRadius: 5}}/>
+                  style={{width: isDesktop ? 320 : "80%", borderRadius: 5, height: 300 }}/>
                 </Box>
                   <Typography variant='h6' 
                   sx={{color: '#fff', 
@@ -53,7 +60,7 @@ function Services(props) {
                   marginTop: 2, textAlign: !isDesktop && 'center'}}>
                   {`${service.titleService}`}
                   </Typography>
-                  {service?.descrition?.map((desc) => {
+                  {service?.description1?.map((desc) => {
                     return (
                       <Typography variant='body1' 
                       sx={{color: '#fff', textAlign: !isDesktop && 'center'}}>
@@ -62,7 +69,7 @@ function Services(props) {
                   })}
                   <Link to={`/${service.id}`} style={{textDecoration: 'none'}} >
                     <Button variant='outlined'
-                    sx={{width: 110, 
+                    sx={{
                       marginRight: 2,
                       marginTop: 3,
                       textTransform: 'capitalize',
@@ -73,7 +80,6 @@ function Services(props) {
                       {`${service.buttonText}`}
                     </Button>
                   </Link>
-
               </Stack>
           </Grid>
             ))}
@@ -81,50 +87,33 @@ function Services(props) {
         </Grid>
         
       </Box>
-    <Stack direction={"column"} spacing={2} sx={{ padding: "30px 60px 30px 60px", color: '#000', backgroundSize: 'cover', }}>
-      <Container disableGutters maxWidth>
-      <Typography variant='h6' sx={{fontWeight: 'bold', paddingBottom: 2}}>
-        {`${info.title2}`}
-      </Typography>
-      <Typography sx={{paddingBottom: 2}}>
-        {`${info.description2}`}
-      </Typography>
-      {keys.map((key) => {
-        return(
-                <Grid container direction="colum">
-                  <Grid item xs={12}>
-                  <Typography variant='body1' sx={{paddingTop: 2, fontWeight: 'bold'}}>
-                    {`${key}`}
-                  </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                  <Typography variant='body2' sx={{paddingTop: 1, color: "#000"}}>
-                    {`${info.text2[key]}`}
-                  </Typography>
-
-                  </Grid>
-
-                </Grid>
-        )
-      })}
-      </Container>
-    </Stack>
+    
     <Box sx={{width: '100%', 
       justifyContent: 'center', 
       alignItems: 'center', 
       display: 'flex', 
       paddingTop: 2, 
-      paddingBottom: 2, backgroundColor: '#192E47'}}>
+      paddingBottom: 2, backgroundColor: '#fff'}}>
+        <Link to='/contact' 
+        style={{width: '100%', 
+        textDecoration: 'none', 
+        justifyContent: 'center', 
+      alignItems: 'center', 
+      display: 'flex', color: "#192E47",  
+      "&:hover": {
+        color: "#fff", 
+       }}}>
         <Button
         variant="outlined"
         sx={{width: isDesktop ? ('30%'): "100%", 
-        color: "#fff", borderColor: '#fff', 
+        color: "#192E47", borderColor: '#192E47', 
         "&:hover": {
-         color: "#192E47", 
-         backgroundColor: '#fff', borderColor: '#ffff'
+         color: "#fff", 
+         backgroundColor: '#192E47', borderColor: '#192E47'
         }}}>
           Get your own portfolio
         </Button>
+        </Link>
       </Box>
       
       </>

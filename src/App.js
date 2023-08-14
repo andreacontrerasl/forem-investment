@@ -19,8 +19,11 @@ function App() {
   return (
     <ThemeProvider theme={mainTheme}>
       <Router>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <Navbar data={{language, setLanguage}}/>
+        <div style={{ flex: '1' }}>
         <Routes>
+
           <Route path="/" element={<Home data={{language}} />} />
           <Route path="/whyforem" element={<WhyForemView data={{language}} />} />
           <Route path="/services" element={<Services data={{language}} />} />
@@ -36,7 +39,11 @@ function App() {
           <Route path="/bernardo-perez" element={<PersonInformation data={{language}} />} />
           <Route path="/michele-di-carlo" element={<PersonInformation data={{language}} />} />
         </Routes>
-        <FooterView />
+        
+        </div>
+          <FooterView />
+        
+        </div>
       </Router>
     </ThemeProvider>
   );

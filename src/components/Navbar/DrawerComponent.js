@@ -29,7 +29,8 @@ function DrawerComponent({ openDrawer, setOpenDrawer, tabValue, language, setLan
           <Link
             to={page.route}
             style={{ color: "#000", textDecoration: "none", }}
-            key={page.text}>
+            key={page.text}
+            onClick={handleDrawerClose}>
             <ListItemButton key={page.text}>
               <ListItemText>
                 <Typography sx={{fontWeight: "bold", color: tabValue === page.text && "#2A63B0"}}>

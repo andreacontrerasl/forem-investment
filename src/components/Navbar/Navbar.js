@@ -38,7 +38,7 @@ function Navbar(props) {
     } else if (location.pathname === "/services") {
       setTabValue("Our Services")
     } else if (location.pathname === "/askai") {
-      setTabValue("Ask to AI")
+      setTabValue("Ask to Ai")
     } else if (location.pathname === "/contact") {
       setTabValue("Contact")
     }
@@ -48,7 +48,7 @@ function Navbar(props) {
     <ScrollToColor>
     <AppBar
       position={location.pathname=== "/" ? "fixed" : "sticky"}>
-      <Container disableGutters>
+      <Container disableGutters maxWidth="100%">
         <Toolbar>
             <Link to="/" style={{textDecoration: 'none'}}>
               <img

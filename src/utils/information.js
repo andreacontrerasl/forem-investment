@@ -1,81 +1,30 @@
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import DvrIcon from '@mui/icons-material/Dvr';
+import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
+import ViewTimelineOutlinedIcon from '@mui/icons-material/ViewTimelineOutlined';
+import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
+import SsidChartOutlinedIcon from '@mui/icons-material/SsidChartOutlined';
+
 
 const home_data_EN = [
     {
         title1: "Our Trusted Custodian",
         text1: "Welcome to our boutique Registered Investment Advisory firm! We specialize in serving high-net-worth families, entrepreneurs, and mid-sized businesses by offering fee-only Wealth Management and Portfolio Management services. Our focus is to help our clients totheir financial goals.",
-        title2: "Our Services",
-        text2: [{
-            id: "family-office",
-            titleService: "Family Office",
-            descrition: [`Expertise: team of experienced professionals who can provide families with comprehensive financial advice.`, 
-                        `Personalized service: tailor their services to the specific needs of each family.`, 
-                        `Discretion: provide families with the discretion they need to manage their wealth.`,
-                        `Access to exclusive investment opportunities that are not available to the general public.`],
-            buttonText: 'Lear more',
-        },
-        {
-            id: "investments-portfolio",
-            titleService: "Investments Portfolio",
-            descrition: [`AI Bond Research: AI driven software that gives credit risk, probability of credit ranting chances and price relative to peers.`, 
-            `ML on Equity selection: fundamental and technical analysis using in-house indicators and rankings for equity selection.`, 
-            `AI on Portfolio Monitoring: investment research software with access and interpreted data from public and private companies.`,],
-            buttonText: 'Lear more',
-        },
-        {
-            id: "custodian-data-aggregation",
-            titleService: "Custodian Data Aggregation",
-            descrition: [`Enhanced risk management: complete view of your exposure to risk.`, 
-            `Improved performance reporting: single view of your investment’s performance and areas of improvements.`, 
-            `Increased compliance: complete view of your transactions.`,],
-            buttonText: 'Lear more',
-        }]
-    }
-]
-
-const home_data_ES = [
-    {
-        title1: "Nuestros custodios",
-        text1: "Bienvenido a nuestra empresa boutique Registered Investment Advisory. Nos especializamos en servir a familias de alto poder adquisitivo, empresarios y medianas empresas, ofreciendo servicios de gestión de patrimonios y gestión de carteras de inversión. Nuestro objetivo es ayudar a nuestros clientes a alcanzar sus objetivos financieros.",
-        title2: "Nuestros Servicios",
-        text2: [{
-            id: "family-office",
-            titleService: "Oficina Familiar",
-            descrition: [`Experiencia: equipo de profesionales experimentados que pueden brindar a las familias un asesoramiento financiero integral.`, 
-            `Servicio personalizado: adaptamos sus servicios a las necesidades específicas de cada familia.`, 
-            `Discreción: proporcionar a las familias la discreción que necesitan para administrar su patrimonio.`,
-            `Acceso a oportunidades de inversión exclusivas que no están disponibles para el público en general.`],
-            buttonText: 'Ver más',
-        },
-        {
-            id: "investments-portfolio",
-            titleService: "Portafolio de Inversiones",
-            descrition: [`AI Bond Research: software impulsado por IA que brinda riesgo de crédito, probabilidad de oportunidades de crédito y precio en relación con sus pares.`, 
-            `ML sobre selección de renta variable: análisis fundamental y técnico utilizando indicadores y rankings internos para la selección de renta variable.`, 
-            `AI on Portfolio Monitoring: software de investigación de inversiones con acceso e interpretación de datos de empresas públicas y privadas.`,],
-            buttonText: 'Ver más',
-        },
-        {
-            id: "custodian-data-aggregation",
-            titleService: "Agregación de datos de custodios",
-            descrition: [`Gestión de riesgos mejorada: visión completa de su exposición al riesgo.`, 
-            `Informes de rendimiento mejorados: vista única del rendimiento de su inversión y áreas de mejora.`, 
-            `Mayor cumplimiento: vista completa de sus transacciones.`,],
-            buttonText: 'Ver más',
-        }]
-    }
-]
-
-const about_data_EN = [
-    {
-        banner1: "We focus on your best interest and on your best fixed income interest." ,
+        title2: "We focus on your best interest and on your best fixed income interest." ,
         text2: [
             {
                 id: "bespoke",
                 photo: '/bespoke.png',
-                title: "Bespoke Bond Portfolios for High-Net-Worth Individuals",
+                title: "Bespoke Bond Portfolio for High-Net-Worth Individuals",
                 button: 'Learn more',
                 description: 'Our personalized financial advice service provides tailored recommendations to help you achieve your financial goals and secure your financial future.',
-                description2: "Using realtime data from Refinitiv we can view and monitor your portfolio, from the most basic data to complex metrics that allows us to make informed decisions based on current and relevant data to keep up portfolio with your targets.",
+                description2: ["Listen carefully to your financial goals, risk profile, and time horizon to screen available bonds.", 
+                "Refine the bond screen, selecting those with specific metrics according to prevalent economic conditions.", 
+                "Filter those bonds with stable and favorable ratings using advanced Artificial Intelligence tools."],
                 photos: ['bespoke.png'] 
                 
             },
@@ -85,7 +34,9 @@ const about_data_EN = [
             title: "Bond Portfolio Optimization",
             button: 'Learn more',
             description: 'Our service uses linear programing to find the best allocation of your investments for optimal returns.',
-            description2: "Using a advanced tool that takes into account various data points and considers a wide range of factors we are able to pick bond issuers and stocks for your portfolio using one of the most advanced tools available to investors.",
+            description2: ["Verify and adjust selection for proprietary metrics.",
+                "Verify and accommodate specific constraints and goals.",
+                "Find the optimal allocation to maximize expected return using linear programming."],
             photos: ['bond1.png','bond2.png', 'bond3.png']
             
         },
@@ -93,52 +44,22 @@ const about_data_EN = [
         {
             id: "ai-pond-portfolio",
             photo: '/ia.png',
-            title: "AI Bond Portfolio Monitoring",
+            title: "Ai Bond Portfolio Monitoring",
             button: 'Learn more',
-            description: 'Our portfolio monitoring service utilizes AI to track investments and provide real-time alerts, ensuring your portfolio is continually optimized.',
-            description2: "Using one of the most advanced software AI tools in the industry, we are able to have on demand information of issuers and their financial conditions. Using this tool we are able to make decisions on which bond to buy or sale, due to an upgrade or downgrade of the financial health, this using historical data that was used to build an AI model that predicts the probability of change on the classification most of the market players.",
+            description: 'Our portfolio monitoring service utilizes Ai to track investments and provide real-time alerts, ensuring your portfolio is continually optimized.',
+            description2: ["Monitor your portfolio using real-time information from a portfolio from a first-in-class data provider.", 
+            "The AI model accurately predicts the probability of bond issuers changing their rating from agencies like S&P and Moody's", 
+            "The AI model helps us to decide which bond issuer buys or sells based on its upgrade or downgrade probabilities."],
             photos: ['ai.png']             
         },],
-        title2: "The Team",
-        text_random: "Forem Investments LLC was founded by a team of experienced accountants with a passion for providing high-net-worth individuals with personalized fixed income investment solutions.",
-        text3: [{
-            id: "freddy-martinez",
-            photo: "Freddy.png",
-            name: "Freddy Martinez",
-            position: 'President & CEO',
-            description: ["20 Years of experience as VP at Merrill Lynch. Seven years at UBS as Senior VP and Portfolio Management.",
-        "Extensive and  up-to-date  experience  advising high-net-worth   families   and   individuals, institutions, and pension funds.",
-        "Certified Financial Planner (CFP).",
-        "Certified Investment Management Analyst (CIMA). Mechanical engineer Universidad Simon Bolivar. MBA of Wharton School of Business. UPenn Master of Science in Materials Engineering at the University of Pennsylvania."]
-        },
-        {
-            id: "bernardo-perez",
-            photo: "bernardo.jpeg",
-            name: "Bernardo Perez",
-            position: 'Business Strategies Consultant',
-            description: ["25 years as a registered investment advisor. Managed a broker-dealer for 30 years. Senior Manager at McKinsey & Co, Inc.",
-        "Lead Consultant in strategy, finance, and operations in various industries such as Banking, Beer, Automotive, Oil, Petrochemicals, Food, Pulp & Paper, Cement, and others.",
-        "MBA at Columbia Business School, NYC - major in finance and business operations",
-        "Chemical Engineer - Universidad Simon Bolivar. Fluent in English, Spanish and French"]
-        },
-        {
-            id: "michele-di-carlo",
-            photo: "michele.jpg",
-            name: "Michele Di Carlo",
-            position: 'Investment Analyst/ Advisor',
-            description: ["Three years of Investment Analyst experience. Registered Investment advisor Series 65. Worked on a startup financial modeling that raised over 2 million dollars.",
-        "Graduated in Business administration with a Finance and Management major at the University of Miami with honors.",
-        "Actively manages clients high net worth clients with millions of dollars on AUM.",
-        "Fluent in English, Spanish, and Italian"]
-        }],
-        title3: "Why Forem Investments?",
-        text4: "As a fee-only advisor, we believe that working with us offers several advantages to our clients, including:"
     }
 ]
 
-const about_data_ES = [
+const home_data_ES = [
     {
-        banner1: "Nos enfocamos en el mejor interés para ti y tu renta fija." ,
+        title1: "Nuestros custodios",
+        text1: "Bienvenido a nuestra empresa boutique Registered Investment Advisory. Nos especializamos en servir a familias de alto poder adquisitivo, empresarios y medianas empresas, ofreciendo servicios de gestión de patrimonios y gestión de carteras de inversión. Nuestro objetivo es ayudar a nuestros clientes a alcanzar sus objetivos financieros.",
+        title2: "Nos enfocamos en el mejor interés para ti y tu renta fija." ,
         text2: [
             {
                 id: "bond-portfolio-optimization",
@@ -169,6 +90,55 @@ const about_data_ES = [
             photos: ['ai.png']          
             
         },],
+    }
+]
+
+const about_data_EN = [
+    {
+        
+        title2: "The Team",
+        text_random: "Our team of experienced financial advisors is passionate about providing high-net-worth individuals and families with personalized and comprehensive investment solutions.",
+        text3: [{
+            id: "freddy-martinez",
+            photo: "Freddy.png",
+            name: "Freddy Martinez",
+            position: 'President & CEO',
+            description: ["27 Years of experience as a successful financial advisor and portfolio manager at Merrill Lynch and UBS.",
+        "Extensive and up-to-date experience advising high-net-worth families, individuals, institutions, and pension funds.",
+        "Certified Financial Planner (CFP).",
+        "Certified Investment Management Analyst (CIMA).", 
+        "Mechanical engineer Universidad Simon Bolivar. MBA of Wharton School of Business. Master of Science in Materials Engineering at the University of Pennsylvania.", 
+        "Proud father of quadruples.", 
+        "Fluent in English and Spanish."]
+        },
+        {
+            id: "bernardo-perez",
+            photo: "bernardo.jpeg",
+            name: "Bernardo Perez",
+            position: 'Business Strategies Consultant',
+            description: ["25 years as a registered investment advisor. He Managed a broker-dealer for 30 years. Senior Manager at McKinsey &amp; Co, Inc.",
+        "Lead Consultant in strategy, finance, and operations in various industries such as Banking, Beer, Automotive, Oil, Petrochemicals, Food, Pulp &amp; Paper, Cement, and others.",
+        "MBA at Columbia Business School, NYC - major in finance and business operations",
+        "Chemical Engineer - Universidad Simon Bolivar. Fluent in English, Spanish and French"]
+        },
+        {
+            id: "michele-di-carlo",
+            photo: "michele.jpg",
+            name: "Michele Di Carlo",
+            position: 'Investment Analyst/ Advisor',
+            description: ["Three years of Investment Analyst experience. Registered Investment advisor Series 65. Worked on a startup financial modeling that raised over 2 million dollars.",
+        "Graduated in Business administration with a Finance and Management major at the University of Miami with honors.",
+        "Actively manages clients high net worth clients with millions of dollars on AUM.",
+        "Fluent in English, Spanish, and Italian"]
+        }],
+        title3: "Why Forem Investments?",
+        text4: "As a fee-only advisor, we believe that working with us offers several advantages to our clients, including:"
+    }
+]
+
+const about_data_ES = [
+    {
+        
         title2: "Nuestro Equipo",
         text_random: "Forem Investments LLC fue fundada por un equipo de contadores experimentados apasionados por brindar soluciones personalizadas de inversión de renta fija a personas de alto patrimonio.",
         text3: [{
@@ -183,7 +153,7 @@ const about_data_ES = [
         },
         {
             id: "bernardo-perez",
-            photo: "bernardo.png",
+            photo: "bernardo.jpeg",
             name: "Bernardo Perez",
             position: 'Consultor de estrategias empresariales',
             description: ["25 años como asesor de inversiones registrado. Gestionó un corredor de bolsa durante 30 años. Senior Manager en McKinsey & Co, Inc.",
@@ -193,7 +163,7 @@ const about_data_ES = [
         },
         {
             id: "michele-di-carlo",
-            photo: "michele.png",
+            photo: "michele.jpg",
             name: "Michele Di Carlo",
             position: 'Analista/asesor de inversiones',
             description: ["Tres años de experiencia como Analista de Inversiones. Asesor de Inversiones Registrado Serie 65. Trabajó en una startup de modelado financiero que recaudó más de 2 millones de dólares.",
@@ -213,29 +183,50 @@ const servicesPg_data_EN = [
             id: "family-office",
             photo: "/course1.jpg",
             titleService: "Family Office",
-            descrition: [`Expertise: team of experienced professionals who can provide families with comprehensive financial advice.`, 
-                        `Personalized service: tailor their services to the specific needs of each family.`, 
-                        `Discretion: provide families with the discretion they need to manage their wealth.`,
-                        `Access to exclusive investment opportunities that are not available to the general public.`],
-            buttonText: 'Lear more',
+            description1: ["Wealth Management Expertise", "Personalized service", "Discretion"],
+            descrition: [
+                {icon : <CurrencyExchangeIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+                text: `Wealth Management Expertise: a team of experienced professionals who can provide families with comprehensive
+            financial advice.`}, 
+                {icon: <AccountCircleIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+                text:`Personalized service: tailor their services to the specific needs of each family.`}, 
+                {icon: <SupervisedUserCircleIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+                text: `Discretion: provide families with the discretion to manage their wealth.`},
+                {icon: <LockPersonIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+                    text: `Access to exclusive investment opportunities that are not available to the general public.`}],
+            buttonText: 'Learn more',
+            
         },
         {
             id: "investments-portfolio",
-            photo: "/course2.jpg",
+            photo: "/course2.jpeg",
             titleService: "Investments Portfolio",
-            descrition: [`AI Bond Research: AI driven software that gives credit risk, probability of credit ranting chances and price relative to peers.`, 
-            `ML on Equity selection: fundamental and technical analysis using in-house indicators and rankings for equity selection.`, 
-            `AI on Portfolio Monitoring: investment research software with access and interpreted data from public and private companies.`,],
-            buttonText: 'Lear more',
+            description1: ["Ai Bond Research", "Machine Learning on Equity selection", "Ai on Portfolio Monitoring"],
+            descrition: [{icon: <TerminalIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+                text: `Ai Bond Research: Ai-driven software that gives credit risk, probability
+            of credit rating changes, and price relative to peers.`}, 
+            {icon: <DvrIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+                text: `Machine Learning on Equity selection: fundamental and technical analysis using in-house
+            indicators and rankings for equity selection.`}, 
+            {icon: <TroubleshootIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+            text: `Ai on Portfolio Monitoring: investment research software with access and interpreted data from
+            public and private companies.`},],
+            buttonText: 'Learn more',
         },
         {
             id: "custodian-data-aggregation",
-            photo: "/course3.jpg",
+            photo: "/course3.jpeg",
             titleService: "Custodian Data Aggregation",
-            descrition: [`Enhanced risk management: complete view of your exposure to risk.`, 
-            `Improved performance reporting: single view of your investment’s performance and areas of improvements.`, 
-            `Increased compliance: complete view of your transactions.`,],
-            buttonText: 'Lear more',
+            description1: ["Enhanced risk management", "Improved performance reporting", "Increased compliance"],
+            descrition: [{icon: <ViewTimelineOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+                text: `Enhanced risk management: a complete view of your risk exposure.`}, 
+            {icon: <FactCheckOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+            text: `Improved performance reporting: a single view of your investment's performance and areas of
+            improvement.`}, 
+            {icon: <SsidChartOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+            text: `Increased compliance: a complete view of your portfolios and transactions across your
+            custodians.`},],
+            buttonText: 'Learn more',
         }],
         title2: `Registered Investment Advisors on a Fee basis`,
         description2:"As a fee-only advisor, we believe that working with us offers several advantages to our clients, including:" ,
@@ -265,16 +256,16 @@ const servicesPg_data_ES = [
         },
         {
             id: "investments-portfolio",
-            photo: "/course2.jpg",
+            photo: "/course2.jpeg",
             titleService: "Portafolio de Inversiones",
-            descrition: [`AI Bond Research: software impulsado por IA que brinda riesgo de crédito, probabilidad de oportunidades de crédito y precio en relación con sus pares.`, 
+            descrition: [`Ai Bond Research: software impulsado por IA que brinda riesgo de crédito, probabilidad de oportunidades de crédito y precio en relación con sus pares.`, 
             `ML sobre selección de renta variable: análisis fundamental y técnico utilizando indicadores y rankings internos para la selección de renta variable.`, 
-            `AI on Portfolio Monitoring: software de investigación de inversiones con acceso e interpretación de datos de empresas públicas y privadas.`,],
+            `Ai on Portfolio Monitoring: software de investigación de inversiones con acceso e interpretación de datos de empresas públicas y privadas.`,],
             buttonText: 'Ver más',
         },
         {
             id: "custodian-data-aggregation",
-            photo: "/course3.jpg",
+            photo: "/course3.jpeg",
             titleService: "Agregación de datos de custodios",
             descrition: [`Gestión de riesgos mejorada: visión completa de su exposición al riesgo.`, 
             `Informes de rendimiento mejorados: vista única del rendimiento de su inversión y áreas de mejora.`, 

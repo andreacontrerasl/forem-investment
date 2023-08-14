@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import Container from "@mui/material/Container"
@@ -65,9 +65,10 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": props.data.language === 'EN' ? "Bond Portfolio" : "Cartera de bonos",
-    "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para inversores de alto valor neto",
-    "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC, the boutique fixed- income investment firm that specializes in building Al-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors" : "Bienvenido a Forem Investments LLC, la firma boutique de inversiones de renta fija que se especializa en la creación de carteras de bonos personalizadas impulsadas por inteligencia artificial para familias de alto poder adquisitivo y asesores independientes.",
+    "header-p1": props.data.language === 'EN' ? "Bespoke Investment Portfolios" : "Cartera de bonos",
+    "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para Inversores de Alto Patrimonio",
+    "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC" : "Bienvenido a Forem Investments LLC",
+    "header-p4": props.data.language === 'EN' ? "The fixed-income investment boutique specializing in building Ai-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors." : "La firma boutique de inversiones de renta fija que se especializa en la creación de carteras de bonos personalizadas impulsadas por inteligencia artificial para familias de alto poder adquisitivo y asesores independientes.",
     "primary-action-EN": "Learn more",
     "primary-action-ES": "Ver más",
     ...props.content,
@@ -75,6 +76,14 @@ function Home(props) {
 
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
+  }, []);
 
   return (
     <Box sx={{overflowX: 'hidden'}}>
@@ -97,23 +106,17 @@ function Home(props) {
               {`${content["header-p2"]} `}
             </Typography>
             <Typography
-              variant={isDesktop ? "body1": "body1"}
+              variant={isDesktop ? "h4": "body1"}
               component="span"
-              sx={{textShadow: "1px 0px 1px #000", color: "#ffff" }}>
+              sx={{textShadow: "1px 0px 1px #000", color: "#ffff", width: '90%', fontWeight: 'normal' }}>
               {`${content["header-p3"]} `}
             </Typography>
-            <Link to='/whyforem' style={{textDecoration: 'none'}}>
-              <Button variant='outlined' 
-              sx={{color: '#fff', 
-              textTransform: 'capitalize', 
-              borderColor: '#fff', marginTop: 2, 
-              "&:hover": {
-                color: "#000", 
-                backgroundColor: '#fff', borderColor: '#fff'
-              }}}>
-                {buttonTxt}
-              </Button>
-            </Link>
+            <Typography
+              variant={isDesktop ? "h5": "body1"}
+              component="span"
+              sx={{textShadow: "1px 0px 1px #000", color: "#ffff", width: '90%', fontWeight: 'normal' }}>
+              {`${content["header-p4"]} `}
+            </Typography>
         </div>
       </header>
       
@@ -151,60 +154,89 @@ function Home(props) {
             </Grid>
         </Container>
       </Box>
-      <Box sx={{backgroundColor: '#192E47', padding: 3}}>
-          <Typography variant='h3' 
-          color="#fff"
-          sx={{ marginTop: 1, marginLeft: 2}}>
-            {`${info.title2}`}
+      <Box sx={{backgroundColor: '#192E47', paddingBottom: 2}}>
+      <Box
+      sx={{paddingTop: 3, paddingRight: 3, paddingLeft: 3}}>
+        <Stack >
+          <Typography
+            variant="h4"
+            sx={{ 
+            color: "#fff", textAlign: !isDesktop && 'center' }}>
+            {`${info.title2} `}
           </Typography>
-        <Container disableGutters maxWidth='lg'>
-        <Grid container direction='row' spacing={2} 
-        sx={{justifyContent: 'center', 
-        display: 'flex', 
-        marginTop: 1, 
-        marginBottom: 2, }}>
+        </Stack>
+      </Box>
+      <Grid container 
+      direction={isDesktop ? 'row' : "column"} 
+      spacing={3} 
+      sx={{justifyContent: 'center', 
+      display: 'flex', 
+      padding: 3, marginBottom: 2}}>
           {info.text2.map((service) => (
-            <Grid item md={4}>
+          <Grid item md={4} xs={6} >
               <Stack direction='column' 
-              sx={{
-                  display: "flex",
-                  padding: 2,
-                  "&:hover": {
-                    transform: "scale(1.01) perspective(0px)",
-                    boxShadow: 5,
-                    transitionDelay: "0.1s",
-                  },
-                }}
-              spacing={1.5}>
-                <Typography variant='h6' sx={{color: '#fff', fontWeight: 'bold'}}>
-                {`${service.titleService}`}
-                </Typography>
-                {service.descrition.map((desc) => {
-                    return (
-                    <Typography variant='body1' sx={{color: '#fff'}}>
-                    {`- ${desc}`}
-                    </Typography>)
-                })}
-                <Link to={`/${service.id}`} style={{textDecoration: 'none'}}>
-                <Button variant='outlined'
-                sx={{width: 110, 
-                  color: '#ffff', 
-                  borderColor: '#fff', 
-                  marginRight: 2,
-                  marginTop: 3,
-                  textTransform: 'capitalize',
-                  "&:hover": {
-                    color: "#000", 
-                    backgroundColor: '#fff', borderColor: '#fff'
-                  }}}>
-                  {`${service.buttonText}`}
-                </Button>
-                </Link>
+              sx={{display: 'flex', alignItems: !isDesktop && 'center'}}
+              >
+                <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
+                  <img alt="img" src={`${service.photo}`} 
+                  style={{width: isDesktop ? 370 : '85%', borderRadius: 5, 
+                  height: isDesktop ? '290px' : '240px'}}/>
+                </Box>
+                  <Typography variant='h6' 
+                  sx={{color: '#fff', 
+                  fontWeight: 'bold', 
+                  marginTop: 2, textAlign: !isDesktop && 'center'}}>
+                  {`${service.title}`}
+                  </Typography>
+                  <Typography variant='body1' 
+                  sx={{color: '#fff', 
+                  textAlign: !isDesktop && 'center'}}>
+                  {`${service.description}`}
+                  </Typography>
+                  <Link to={`/${service.id}`} style={{textDecoration: 'none'}} >
+                    <Button variant='outlined'
+                    sx={{width: 115, 
+                      marginRight: 2,
+                      marginTop: 3,
+                      textTransform: 'capitalize',
+                      color: "#fff", borderColor: "#fff", "&:hover": {
+                        color: "#000", 
+                        backgroundColor: '#fff', borderColor: '#fff'
+                      }}}>
+                      {`${service.button}`}
+                    </Button>
+                  </Link>
               </Stack>
-            </Grid>
+          </Grid>
           ))}
         </Grid>
-        </Container>
+    </Box>
+    <Box sx={{width: '100%', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      display: 'flex', 
+      paddingTop: 2, 
+      paddingBottom: 2, backgroundColor: '#fff'}}>
+        <Link to='/contact' 
+        style={{width: '100%', 
+        textDecoration: 'none', 
+        justifyContent: 'center', 
+      alignItems: 'center', 
+      display: 'flex', color: "#192E47",  
+      "&:hover": {
+        color: "#fff", 
+       }}}>
+        <Button
+        variant="outlined"
+        sx={{width: isDesktop ? ('30%'): "100%", 
+        color: "#192E47", borderColor: '#192E47', 
+        "&:hover": {
+         color: "#fff", 
+         backgroundColor: '#192E47', borderColor: '#192E47'
+        }}}>
+          Get your own portfolio
+        </Button>
+        </Link>
       </Box>
       </>
       ))}
