@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import Container from "@mui/material/Container"
@@ -6,6 +6,8 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Divider from "@mui/material/Divider"
 import Stack from "@mui/material/Stack"
+import Alert from "@mui/material/Alert"
+import Snackbar from "@mui/material/Snackbar"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import { useTheme } from "@mui/material/styles"
@@ -16,6 +18,16 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import FormInputText from './common/FormInputText'
 
 function Contact(props) {
+  const [openSnack, setOpenSnack] = useState(false)
+  const [snackMessage, setSnackMessage] = useState(null)
+
+  const handleCloseSnack = (event, reason) => {
+    if (reason === "clickaway") {
+      return
+    }
+    setOpenSnack(false)
+  }
+
   useEffect(() => {
     const scrollToTop = () => {
       window.scrollTo(0, 0);
@@ -50,7 +62,31 @@ function Contact(props) {
       about,
       message,
     } = data
-    console.log(data)
+    try {
+      let response = await fetch('http://127.0.0.1:8000/api/contact/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+  
+      if (response.ok) {
+        setOpenSnack(true)
+        setSnackMessage({
+          message: "Form send!",
+          color: "success"
+        })
+      } else {
+        setOpenSnack(true)
+        setSnackMessage({
+          message: "An error has occure, please try again!",
+          color: "error"
+        })
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
   
@@ -181,6 +217,15 @@ function Contact(props) {
         </Button>
         </Stack>
         </Container>
+        <Snackbar
+        open={openSnack}
+        autoHideDuration={3000}
+        onClose={handleCloseSnack}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+        <Alert severity={snackMessage?.color} variant="filled">
+          {snackMessage?.message}
+        </Alert>
+      </Snackbar>
       </Box>
     </>
   )
