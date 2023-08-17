@@ -11,6 +11,7 @@ import Button from "@mui/material/Button"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import FabComponent from './common/FabComponent';
+import CircularProgress from '@mui/material/CircularProgress';
 import {home_data_EN, home_data_ES } from '../utils/information'
 
 const useStyles = makeStyles((theme) => ({
@@ -52,6 +53,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Home(props) {
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+
+  const handleVideoLoad = () => {
+    setIsVideoLoading(false);
+  };
+
   const classes = useStyles()
   let datos
 
@@ -95,7 +102,10 @@ function Home(props) {
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',}}>
-        <video id="headerVideo" className={classes.video} autoPlay muted loop>
+        <video id="headerVideo" 
+        className={classes.video} 
+        autoPlay 
+        muted loop onLoadedData={handleVideoLoad}>
           <source src="\vcompress_3.MOV" type="video/mp4" />
         </video>
         <div className={classes.videoOverlay} />

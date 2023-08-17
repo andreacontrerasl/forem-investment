@@ -28,11 +28,11 @@ function FooterView() {
             <img
               src="\Picture1.png"
               alt="Forem"
-              style={{width: 120, height: 45}}
+              style={{width: 120, height: 45, paddingLeft: '5px'}}
             />
           </Link>
         </Grid>}
-      <Grid item md={10} sx={{justifyContent: "flex-end", display: 'flex', alignContent: 'center'}}>
+      <Grid item md={10} sx={{justifyContent:isDesktop ?  "flex-end" : 'center', display: 'flex', alignContent: 'center'}}>
         <Stack direction="row" spacing={1} sx={{marginTop: !isDesktop && 2}}>
           {HERO_DRAWER_OPTIONS.map((page) => (
             <React.Fragment key={page.text}>
@@ -61,22 +61,12 @@ function FooterView() {
         </Stack>
       </Grid>
     </Grid>
-  
-      {!isDesktop && 
-        <Link to="/" style={{textDecoration: 'none'}}>
-          <img
-          src="\Picture1.png"
-          alt="Forem"
-          style={{width: isDesktop ? 120 : 80, height: isDesktop ? 45 : 35, 
-            marginLeft: 18, marginTop: 2}}
-          />
-        </Link>}
-      <Stack direction='row' spacing={1} 
-      sx={{alignItems: 'center', 
-      direction: 'flex', 
-      padding: "10px 20px 5px 20px"}}>
+      <Stack direction='row' spacing={1}>
         
-        <Box sx={{display: 'flex', alignItems: 'center', marginRight: 'auto'}}>
+        {isDesktop && 
+        <Box sx={{display: 'flex', 
+        alignItems: 'center', 
+        marginRight: isDesktop && 'auto', paddingLeft: '15px'}}>
           <CopyrightIcon fontSize="sm" 
           sx={{color: '#B1B1B1', 
           paddingTop: !isDesktop && 1, 
@@ -85,7 +75,7 @@ function FooterView() {
           sx={{color: '#B1B1B1', paddingTop: isDesktop ? 0.2 : 1.2}}>
               {`2023 Forem Investments LLC.`}
           </Typography>
-        </Box>
+        </Box>}
         
         <Box sx={{marginLeft: 'auto'}}>
           <LinkedInIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
@@ -95,7 +85,9 @@ function FooterView() {
         </Box>
         
     </Stack>
-      <Box sx={{marginLeft: 2.7, paddingBottom: 1}}>
+    <Stack direction={"row"} >
+      
+      <Box sx={{marginLeft: 2, paddingBottom: 1}}>
         <Link style={{textDecoration: 'none', color: '#B1B1B1'}}
         to="https://docs.google.com/document/d/1-urc_W-HQp4B1bHQwco2csrnCLQNq6DN3tQMAeUBu1Y/edit?usp=sharing">
           <Typography variant='caption' 
@@ -114,7 +106,21 @@ function FooterView() {
               {`ADV`}
         </Typography>
         </Link>
-        </Box>
+      </Box>
+      {!isDesktop && 
+        <Box sx={{display: 'flex', 
+        alignItems: 'center',  
+        marginLeft: 'auto', 
+        marginRight: '10px', paddingBottom: 1}}>
+          <CopyrightIcon fontSize="sm" 
+          sx={{color: '#B1B1B1', 
+          paddingRight: 0.5,}}/>
+          <Typography variant='caption' 
+          sx={{color: '#B1B1B1', }}>
+              {`2023 Forem Investments LLC.`}
+          </Typography>
+        </Box>}
+    </Stack>
     </Box>
   )
 }

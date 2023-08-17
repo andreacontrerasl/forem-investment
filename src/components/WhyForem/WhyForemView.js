@@ -42,7 +42,7 @@ function WhyForemView(props) {
       justifyContent: 'center', 
       backgroundColor: '#192E47', 
       alignItems: 'center', padding: 2}}>
-        <Typography variant={isDesktop ? 'h3' : 'h4'} color={"#fff"} 
+        <Typography variant={isDesktop ? 'h3' : 'h5'} color={"#fff"} 
         sx={{textAlign: 'center', paddingTop: 1}}>
           {info.title3}
         </Typography>
@@ -53,7 +53,7 @@ function WhyForemView(props) {
         <img src={props.data.language === 'EN' ? '/whyforem.jpg' : '/whyforemes.jpeg'} width={isDesktop ? 700: '100%'} />
       </Stack>
       <Box>
-        <Typography variant='h3' color="#000" sx={{padding: '20px 0 0 20px'}}>
+        <Typography variant={isDesktop ? 'h3' : 'h4'} color="#000" sx={{padding: '20px 0 0 20px'}}>
           {`${info.title2}`}
         </Typography>
         <Typography variant='body1' 
