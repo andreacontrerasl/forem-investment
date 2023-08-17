@@ -77,7 +77,7 @@ function FooterView() {
           </Typography>
         </Box>}
         
-        <Box sx={{marginLeft: 'auto'}}>
+        <Box sx={{marginLeft: 'auto', paddingRight: '20px'}}>
           <LinkedInIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
           <InstagramIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />
           <FacebookIcon color='white' sx={{cursor: 'pointer', marginRight: '5px'}} />

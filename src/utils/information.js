@@ -18,39 +18,39 @@ const home_data_EN = [
         text2: [
             {
                 id: "bespoke",
-                photo: '/bespoke.png',
+                photo: '/bespoke.webp',
                 title: "Bespoke Bond Portfolio for High-Net-Worth Individuals",
                 button: 'Learn more',
                 description: 'Our personalized financial advice service provides tailored recommendations to help you achieve your financial goals and secure your financial future.',
                 description2: ["Listen carefully to your financial goals, risk profile, and time horizon to screen available bonds.", 
                 "Refine the bond screen, selecting those with specific metrics according to prevalent economic conditions.", 
                 "Filter those bonds with stable and favorable ratings using advanced Artificial Intelligence tools."],
-                photos: ['bespoke.png'] 
+                photos: ['bespoke.webp'] 
                 
             },
             {
             id: "bond-portfolio-optimization",
-            photo: '/bond.png',
+            photo: '/bond.webp',
             title: "Bond Portfolio Optimization",
             button: 'Learn more',
             description: 'Our service uses linear programing to find the best allocation of your investments for optimal returns.',
             description2: ["Verify and adjust selection for proprietary metrics.",
                 "Verify and accommodate specific constraints and goals.",
                 "Find the optimal allocation to maximize expected return using linear programming."],
-            photos: ['bond1.png', 'bond3.png']
+            photos: ['bond1.webp', 'bond3.webp']
             
         },
         
         {
             id: "ai-pond-portfolio",
-            photo: '/ia.png',
+            photo: '/ia.webp',
             title: "Ai Bond Portfolio Monitoring",
             button: 'Learn more',
             description: 'Our portfolio monitoring service utilizes Ai to track investments and provide real-time alerts, ensuring your portfolio is continually optimized.',
             description2: ["Monitor your portfolio using real-time information from a portfolio from a first-in-class data provider.", 
             "The AI model accurately predicts the probability of bond issuers changing their rating from agencies like S&P and Moody's", 
             "The AI model helps us to decide which bond issuer buys or sells based on its upgrade or downgrade probabilities."],
-            photos: ['ai.png']             
+            photos: ['ai.webp']             
         },],
     }
 ]
@@ -63,37 +63,37 @@ const home_data_ES = [
         text2: [
             {
                 id: "bond-portfolio-optimization",
-                photo: '/bespoke.png',
+                photo: '/bespoke.webp',
                 title: "Carteras de bonos a medida para personas de alto patrimonio",
                 button: 'Ver más',
                 description: 'Nuestro servicio de asesoramiento financiero personalizado proporciona recomendaciones personalizadas para ayudarle a alcanzar sus objetivos financieros y asegurar su futuro.',
                 description2: ["Escuche atentamente sus objetivos financieros, perfil de riesgo y horizonte temporal para evaluar los bonos disponibles.",
                 "Refinar la pantalla de bonos, seleccionando aquellos con métricas específicas de acuerdo con las condiciones económicas prevalecientes.",
                 "Filtrar aquellos bonos con calificaciones estables y favorables utilizando herramientas avanzadas de Inteligencia Artificial."],
-                photos: ['bespoke.png']     
+                photos: ['bespoke.webp']     
             },
             {
             id: "bespoke",
-            photo: '/bond.png',
+            photo: '/bond.webp',
             title: "Optimización de la cartera de bonos",
             button: 'Ver más',
             description: 'Nuestro servicio utiliza programación lineal para encontrar la mejor asignación de su cartera de bonos para obtener rendimientos óptimos.',
             description2: ["Verificar y ajustar la selección de métricas propietarias.",
             "Verificar y adaptarse a limitaciones y objetivos específicos.",
             "Encuentramos alocacion óptima para maximizar el rendimiento esperado usando programación lineal."],
-            photos: ['bond1.png', 'bond3.png']    
+            photos: ['bond1.webp', 'bond3.webp']    
         },
         
         {
             id: "ai-pond-portfolio",
-            photo: '/ia.png',
+            photo: '/ia.webp',
             title: "Monitoreo de cartera de bonos IA",
             button: 'Ver más',
             description: 'Nuestro servicio de monitoreo de cartera utiliza IA para rastrear inversiones y proporcionar alertas en tiempo real, lo que garantiza que su cartera se optimice continuamente.',
             description2: ["Supervise su cartera utilizando información en tiempo real de una cartera de un proveedor de datos de primera clase.", 
             "El modelo de IA predice con precisión la probabilidad de que los emisores de bonos cambien su calificación de agencias como S&P y Moody's.",
             "El modelo de IA nos ayuda a decidir qué emisor de bonos compra o vende en función de sus probabilidades de mejora o reducción."],
-            photos: ['ai.png']          
+            photos: ['ai.webp']          
             
         },],
     }
@@ -106,7 +106,7 @@ const about_data_EN = [
         text_random: "Our team of experienced financial advisors is passionate about providing high-net-worth individuals and families with personalized and comprehensive investment solutions.",
         text3: [{
             id: "freddy-martinez",
-            photo: "Freddy.png",
+            photo: "Freddy.webp",
             name: "Freddy Martinez",
             position: 'President & CEO',
             description: ["27 Years of experience as a successful financial advisor and portfolio manager at Merrill Lynch and UBS.",
@@ -119,7 +119,7 @@ const about_data_EN = [
         },
         {
             id: "bernardo-perez",
-            photo: "bernardo.jpeg",
+            photo: "bernardo.webp",
             name: "Bernardo Perez",
             position: 'Business Strategies Consultant',
             description: ["25 years as a registered investment advisor. He Managed a broker-dealer for 30 years. Senior Manager at McKinsey &amp; Co, Inc.",
@@ -129,7 +129,7 @@ const about_data_EN = [
         },
         {
             id: "michele-di-carlo",
-            photo: "michele.jpg",
+            photo: "michele.webp",
             name: "Michele Di Carlo",
             position: 'Investment Analyst/ Advisor',
             description: ["Three years of Investment Analyst experience. Registered Investment advisor Series 65. Worked on a startup financial modeling that raised over 2 million dollars.",
@@ -149,7 +149,7 @@ const about_data_ES = [
         text_random: "Forem Investments LLC fue fundada por un equipo de contadores experimentados apasionados por brindar soluciones personalizadas de inversión de renta fija a personas de alto patrimonio.",
         text3: [{
             id: "freddy-martinez",
-            photo: "Freddy.png",
+            photo: "Freddy.webp",
             name: "Freddy Martinez",
             position: 'Presidente & CEO',
             description: ["27 años de experiencia como exitoso asesor financiero y gestor de carteras en Merrill Lynch y UBS.",
@@ -162,7 +162,7 @@ const about_data_ES = [
         },
         {
             id: "bernardo-perez",
-            photo: "bernardo.jpeg",
+            photo: "bernardo.webp",
             name: "Bernardo Perez",
             position: 'Consultor de estrategias empresariales',
             description: ["25 años como asesor de inversiones registrado. Dirigió una casa de bolsa durante 30 años. Gerente sénior en McKinsey & Co, Inc.",
@@ -172,7 +172,7 @@ const about_data_ES = [
         },
         {
             id: "michele-di-carlo",
-            photo: "michele.jpg",
+            photo: "michele.webp",
             name: "Michele Di Carlo",
             position: 'Analista/asesor de inversiones',
             description: ["Cuatro años de experiencia como Analista de Inversiones. ",
@@ -210,7 +210,7 @@ const servicesPg_data_EN = [
         },
         {
             id: "investments-portfolio",
-            photo: "/course2.jpeg",
+            photo: "/course2.webp",
             titleService: "Investments Portfolio",
             description1: ["Ai Bond Research", "Machine Learning on Equity selection", "Ai on Portfolio Monitoring"],
             descrition: [{icon: <TerminalIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large"/>,
@@ -226,7 +226,7 @@ const servicesPg_data_EN = [
         },
         {
             id: "custodian-data-aggregation",
-            photo: "/course3.jpeg",
+            photo: "/course3.webp",
             titleService: "Custodian Data Aggregation",
             description1: ["Enhanced risk management", "Improved performance reporting", "Increased compliance"],
             descrition: [{icon: <ViewTimelineOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
@@ -273,7 +273,7 @@ const servicesPg_data_ES = [
         },
         {
             id: "investments-portfolio",
-            photo: "/course2.jpeg",
+            photo: "/course2.webp",
             titleService: "Portafolio de Inversiones",
             description1: ["Investigación de bonos de inteligencia artificial", "Machine Learning sobre selección de renta variable", "AI on Portfolio Monitoring"],
             descrition: [
@@ -287,7 +287,7 @@ const servicesPg_data_ES = [
         },
         {
             id: "custodian-data-aggregation",
-            photo: "/course3.jpeg",
+            photo: "/course3.webp",
             titleService: "Concentración de datos de diferentes custodios ",
             description1: ["Gestión de riesgos mejorada", "Informes de rendimiento mejorados", "Mayor cumplimiento"],
             descrition: [

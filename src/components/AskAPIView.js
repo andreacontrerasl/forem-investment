@@ -151,7 +151,7 @@ function AskAPIView(props) {
                 onChange={(e) => handleChange(e)}
                 value={prompt}
                 sx={{width: '85%'}}
-                placeholder="Ask to Ai.."
+                placeholder="Ask Ai.."
                 variant="outlined"
                 multiline
               />

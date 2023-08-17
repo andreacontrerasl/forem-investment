@@ -50,7 +50,7 @@ function WhyForemView(props) {
         sx={{textAlign: 'center', paddingTop: 2, paddingBottom: 4}}>
           {info.text4}
         </Typography>
-        <img src={props.data.language === 'EN' ? '/whyforem.jpg' : '/whyforemes.jpeg'} width={isDesktop ? 700: '100%'} />
+        <img src={props.data.language === 'EN' ? '/whyforem.webp' : '/whyforemes.webp'} width={isDesktop ? 700: '100%'} />
       </Stack>
       <Box>
         <Typography variant={isDesktop ? 'h3' : 'h4'} color="#000" sx={{padding: '20px 0 0 20px'}}>
