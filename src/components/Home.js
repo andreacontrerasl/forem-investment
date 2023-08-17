@@ -102,6 +102,8 @@ function Home(props) {
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',}}>
+      {isVideoLoading &&
+      <CircularProgress />}
         <video id="headerVideo" 
         className={classes.video} 
         autoPlay 
