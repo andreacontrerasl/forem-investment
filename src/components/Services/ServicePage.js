@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react'
 import { useTheme } from "@mui/material/styles"
+import { makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {useLocation, useNavigate} from 'react-router-dom';
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
+import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import IconButton from "@mui/material/IconButton"
@@ -55,46 +57,44 @@ function ServicePage(props) {
           {service_data.titleService}
         </Typography>
       </Stack>
-      <Box sx={{display: 'flex', justifyContent: 'center'}}>
-      <Stack direction={isDesktop ? "row" : "column"} spacing={2} 
-      sx={{padding: 2, alignItems: 'center', maxWidth:'lg', display: 'flex', justifyContent: 'center'}}>
-        {!isDesktop && <img alt="img" 
-        src={service_data?.photo} 
-        style={{borderRadius: '10px'}} 
-        width={400} />}
-        <Stack direction="column" rowGap={2}>
-        
-        {service_data?.descrition?.map((desc) => {
-          return (
-            <Stack direction="row" 
-              columnGap={2}
-              sx={{
-                backgroundColor: '#192E47', 
-              borderRadius: isDesktop ?  '60px' : '60px', 
-              height: isDesktop ? '117px' : '125px', 
-              display: 'flex', alignItems: 'center'}}>
-                <Box 
-                sx={{backgroundColor: 'rgb(217, 217, 217, .2)', 
-                borderRadius: '50%', 
-                padding: isDesktop ? "0px 36px 0px 36px" : "0px 38px 0px 38px", 
-                display: 'flex', alignItems: 'center', height: isDesktop ? '117px' : '125px',}}>
-                <>{desc.icon}</>
+      <div  style={{position: 'relative',
+      width: '100%',
+      height: isDesktop ? '80vh' : '73vh',
+      overflow: 'hidden', backgroundColor: 'rgba(0, 0, 0, 0.6)', display: 'flex',
+      justifyContent: 'center'}}>
+        <div style={{position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `url(${service_data?.photo})`, 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.4,}}></div>
+          <Container disableGutters 
+          sx={{position: 'absolute',
+            color: '#fff', height: '100%', display: 'flex', alignItems: 'center'}}>
+            <Grid container direction="row" columnGap={4} rowGap={4}
+            sx={{display: 'flex', justifyContent: 'center', marginRight: 2, marginLeft: 2}}>
+              {service_data?.descrition?.map((desc) => {
+                return (
+                  <Grid item md={4}
+                    sx={{
+                      border: '1px solid #fff', 
+                      display: 'flex', alignItems: 'center', 
+                      padding: '1rem', borderRadius: '20px', 
+                      backgroundColor: 'rgb(25, 46, 71, .2)'}}>
+                      <Typography variant={'body1'} 
+                        sx={{color: '#fff', marginRight: 2}}>
+                        {`${desc.text}`}
+                      </Typography>
+                    </Grid>)
+              })}
+            </Grid>
+          </Container>
+        </div>
 
-                </Box>
-                <Typography variant={isDesktop ? 'body1' : 'body2'} 
-                  sx={{color: '#fff', marginRight: 2}}>
-                  {`${desc.text}`}
-                </Typography>
-              </Stack>)
-        })}
-        </Stack>
-        {isDesktop && <img alt="img" 
-        src={service_data?.photo} 
-        style={{borderRadius: '10px'}} 
-        width={ isDesktop ? 550 : 350} />}
-        
-      </Stack>
-      </Box>
+      
     </Box>
   )
 }

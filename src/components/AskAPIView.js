@@ -96,7 +96,7 @@ function AskAPIView(props) {
             return(
               <>
               {item.status && (
-                <Grid item md={3} xs={12}>
+                <Grid item md={3} xs={12} sx={{marginLeft: 2, marginRight: 2}}>
                 <Card>
                   <CardMedia
                     component="img"
@@ -131,9 +131,10 @@ function AskAPIView(props) {
       <Stack direction={"column"} 
       sx={{backgroundColor: "#fff", 
       width: '100%', paddingBottom: 10}}>
-        <Typography sx={{textAlign: 'center', 
-        marginBottom: 10, marginTop: 10}}>
-          Please ask to Ai any question relevant to your investments needs. 
+        <Typography variant={isDesktop ? 'h5': 'h6'}
+         sx={{textAlign: 'center', 
+        marginBottom: 5, marginTop: 5, color: '#2D4080'}}>
+          Please ask Ai any question relevant to your investments needs. 
         </Typography>
        
         <Stack 
@@ -142,18 +143,7 @@ function AskAPIView(props) {
         sx={{display: 'flex', 
         justifyContent: 'center', 
         width: '100%', alignItems: 'center' }}>
-          {apiResponse && (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <pre>
-                {apiResponse}
-              </pre>
-            </Box>
-          )}
+          
           
           <Stack direction="row" spacing={2} 
           sx={{width:'80%'}}>
@@ -175,9 +165,22 @@ function AskAPIView(props) {
                    backgroundColor: '#192E47', borderColor: '#192E47'
                 }}}
               >
-                {loading ? "Generating..." : "Generate"}
+                {loading ? "Asking..." : "Ask"}
               </Button>
           </Stack>
+          {apiResponse && (
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                width: '50%'
+              }}
+            >
+              <Typography>
+                {apiResponse}
+              </Typography>
+            </Box>
+          )}
           </Stack>
       </Stack>
     </>

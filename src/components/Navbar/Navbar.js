@@ -38,7 +38,7 @@ function Navbar(props) {
     } else if (location.pathname === "/services") {
       setTabValue("Our Services")
     } else if (location.pathname === "/askai") {
-      setTabValue("Ask to Ai")
+      setTabValue("Ask Ai")
     } else if (location.pathname === "/contact") {
       setTabValue("Contact")
     }
@@ -92,7 +92,7 @@ function Navbar(props) {
                   paddingLeft: 2,
                   color: (trigger) ? (props.data.language === 'EN' ? "#000" : "#d5d5d5") : (props.data.language === 'EN' ?(location.pathname === "/" ? "#fff" : "#000") : "#d5d5d5"),
                   cursor: 'pointer'
-                }}>EN
+                }}>ENG
               </Typography>
                 <Typography
                 sx={{
@@ -106,7 +106,7 @@ function Navbar(props) {
                   paddingRight: 2,
                   color: (trigger) ? (props.data.language === 'ES' ? "#000" : "#d5d5d5") : (props.data.language === 'ES' ?(location.pathname === "/" ? "#fff" : "#000") : "#d5d5d5"),
                   cursor: 'pointer'
-                }}>ES</Typography>
+                }}>ESP</Typography>
               
             </Stack>
             </>

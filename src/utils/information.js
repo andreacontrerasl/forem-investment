@@ -37,7 +37,7 @@ const home_data_EN = [
             description2: ["Verify and adjust selection for proprietary metrics.",
                 "Verify and accommodate specific constraints and goals.",
                 "Find the optimal allocation to maximize expected return using linear programming."],
-            photos: ['bond1.png','bond2.png', 'bond3.png']
+            photos: ['bond1.png', 'bond3.png']
             
         },
         
@@ -81,7 +81,7 @@ const home_data_ES = [
             description2: ["Verificar y ajustar la selección de métricas propietarias.",
             "Verificar y adaptarse a limitaciones y objetivos específicos.",
             "Encuentramos alocacion óptima para maximizar el rendimiento esperado usando programación lineal."],
-            photos: ['bond1.png','bond2.png', 'bond3.png']    
+            photos: ['bond1.png', 'bond3.png']    
         },
         
         {
@@ -196,14 +196,14 @@ const servicesPg_data_EN = [
             titleService: "Family Office",
             description1: ["Wealth Management Expertise", "Personalized service", "Discretion"],
             descrition: [
-                {icon : <CurrencyExchangeIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+                {icon : <CurrencyExchangeIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large" />,
                 text: `Wealth Management Expertise: a team of experienced professionals who can provide families with comprehensive
             financial advice.`}, 
-                {icon: <AccountCircleIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
+                {icon: <AccountCircleIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large" />,
                 text:`Personalized service: tailor their services to the specific needs of each family.`}, 
-                {icon: <SupervisedUserCircleIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+                {icon: <SupervisedUserCircleIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large"/>,
                 text: `Discretion: provide families with the discretion to manage their wealth.`},
-                {icon: <LockPersonIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+                {icon: <LockPersonIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large"/>,
                     text: `Access to exclusive investment opportunities that are not available to the general public.`}],
             buttonText: 'Learn more',
             
@@ -213,13 +213,13 @@ const servicesPg_data_EN = [
             photo: "/course2.jpeg",
             titleService: "Investments Portfolio",
             description1: ["Ai Bond Research", "Machine Learning on Equity selection", "Ai on Portfolio Monitoring"],
-            descrition: [{icon: <TerminalIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+            descrition: [{icon: <TerminalIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large"/>,
                 text: `Ai Bond Research: Ai-driven software that gives credit risk, probability
             of credit rating changes, and price relative to peers.`}, 
-            {icon: <DvrIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+            {icon: <DvrIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large"/>,
                 text: `Machine Learning on Equity selection: fundamental and technical analysis using in-house
             indicators and rankings for equity selection.`}, 
-            {icon: <TroubleshootIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
+            {icon: <TroubleshootIcon sx={{color: '#192E47', fontSize: '40px'}} fontSize= "large"/>,
             text: `Ai on Portfolio Monitoring: investment research software with access and interpreted data from
             public and private companies.`},],
             buttonText: 'Learn more',

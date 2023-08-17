@@ -4,7 +4,6 @@ import useMediaQuery from "@mui/material/useMediaQuery"
 import {Link} from 'react-router-dom';
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
-import Divider from "@mui/material/Divider"
 import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import CopyrightIcon from "@mui/icons-material/Copyright"
@@ -14,7 +13,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { HERO_DRAWER_OPTIONS } from '../Navbar/constants'
 
-
 function FooterView() {
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
@@ -23,7 +21,7 @@ function FooterView() {
     <Grid
       container
       direction={isDesktop ? "row" : "column"}
-      sx={{ padding: 2 }}>
+      sx={{ padding: 1 }}>
         {isDesktop && 
         <Grid item md={2}>
           <Link to="/" style={{textDecoration: 'none'}}>
@@ -63,14 +61,14 @@ function FooterView() {
         </Stack>
       </Grid>
     </Grid>
-    
-    <Divider sx={{paddingTop: 2, marginLeft: 2, marginRight: 2}}/>
+  
       {!isDesktop && 
         <Link to="/" style={{textDecoration: 'none'}}>
           <img
           src="\Picture1.png"
           alt="Forem"
-          style={{width: isDesktop ? 120 : 80, height: isDesktop ? 45 : 35, marginLeft: 18, marginTop: 4}}
+          style={{width: isDesktop ? 120 : 80, height: isDesktop ? 45 : 35, 
+            marginLeft: 18, marginTop: 2}}
           />
         </Link>}
       <Stack direction='row' spacing={1} 
@@ -97,7 +95,7 @@ function FooterView() {
         </Box>
         
     </Stack>
-      <Box sx={{marginLeft: 2.7, paddingBottom: 2}}>
+      <Box sx={{marginLeft: 2.7, paddingBottom: 1}}>
         <Link style={{textDecoration: 'none', color: '#B1B1B1'}}
         to="https://docs.google.com/document/d/1-urc_W-HQp4B1bHQwco2csrnCLQNq6DN3tQMAeUBu1Y/edit?usp=sharing">
           <Typography variant='caption' 

@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
+import FabComponent from '../common/FabComponent'
 import { servicesPg_data_ES, servicesPg_data_EN} from '../../utils/information'
 
 function Services(props) {
@@ -36,34 +37,39 @@ function Services(props) {
       const keys = Object.keys(info.text2)
       return(
       <>
-      <Box sx={{backgroundColor: '#192E47', paddingBottom: 2}}>
+      <Box sx={{backgroundColor: '#192E47', 
+      paddingBottom: 2, 
+      display: 'flex', 
+      flexDirection: 'column', justifyContent: 'center',}}>
         <Typography variant='h4' 
         sx={{color: '#fff', paddingTop: 4, 
-        paddingRight: 3, paddingLeft: 3}}>{info.banner1}</Typography>
+        paddingRight: 3, paddingLeft: 3, textAlign: 'start'}}>{info.banner1}</Typography>
         <Grid container 
-          direction={isDesktop ? 'row' : "column"} 
-          spacing={3} 
+          direction={ "row"} 
+          rowGap={4} 
+          columnGap={2}
           sx={{justifyContent: 'center', 
-          display: 'flex', 
-          padding: 3, marginBottom: 2}}>
+        display: 'flex', marginBottom: 2, paddingLeft: 3, paddingRight: 3, marginTop: 2}}>
             {info.text1.map((service) => (
-              <Grid item md={4} xs={6} >
-              <Stack direction='column' sx={{display: 'flex', alignItems: !isDesktop && 'center'}}
+              <Grid item md={3.7} sm={5} xs={12} >
+              <Stack direction='column' 
+              sx={{display: 'flex',}}
               >
-                <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
+                <Box sx={{display: 'flex', 
+                justifyContent: !isDesktop && 'center'}}>
                   <img alt="img" src={`${service.photo}`} 
-                  style={{width: isDesktop ? 320 : "80%", borderRadius: 5, height: 300 }}/>
+                  style={{width: "100%", borderRadius: 5, height: "315px" }}/>
                 </Box>
                   <Typography variant='h6' 
                   sx={{color: '#fff', 
                   fontWeight: 'bold', 
-                  marginTop: 2, textAlign: !isDesktop && 'center'}}>
+                  marginTop: 2, }}>
                   {`${service.titleService}`}
                   </Typography>
                   {service?.description1?.map((desc) => {
                     return (
                       <Typography variant='body1' 
-                      sx={{color: '#fff', textAlign: !isDesktop && 'center'}}>
+                      sx={{color: '#fff', }}>
                       {`- ${desc}`}
                       </Typography>)
                   })}
@@ -83,41 +89,11 @@ function Services(props) {
               </Stack>
           </Grid>
             ))}
-
         </Grid>
-        
       </Box>
-    
-    <Box sx={{width: '100%', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', 
-      paddingTop: 2, 
-      paddingBottom: 2, backgroundColor: '#fff'}}>
-        <Link to='/contact' 
-        style={{width: '100%', 
-        textDecoration: 'none', 
-        justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', color: "#192E47",  
-      "&:hover": {
-        color: "#fff", 
-       }}}>
-        <Button
-        variant="outlined"
-        sx={{width: isDesktop ? ('30%'): "100%", 
-        color: "#192E47", borderColor: '#192E47', 
-        "&:hover": {
-         color: "#fff", 
-         backgroundColor: '#192E47', borderColor: '#192E47'
-        }}}>
-          {props.data.language === 'EN' ? "Get your own portfolio" : "Consigue tu propio portafolio"}
-        </Button>
-        </Link>
-      </Box>
-      
       </>
     )})}
+    <FabComponent language={props.data.language} />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import Container from "@mui/material/Container"
@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
+import FabComponent from './common/FabComponent';
 import {home_data_EN, home_data_ES } from '../utils/information'
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +55,7 @@ function Home(props) {
   const classes = useStyles()
   let datos
 
+
   let buttonTxt
 
   if(props.data.language === 'ES'){
@@ -87,20 +89,25 @@ function Home(props) {
 
   return (
     <Box sx={{overflowX: 'hidden'}}>
-      <header className={classes.header}>
+      <header  style={{position: 'relative',
+    height: isDesktop ? '100vh' : '75vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',}}>
         <video id="headerVideo" className={classes.video} autoPlay muted loop>
           <source src="\vcompress_3.MOV" type="video/mp4" />
         </video>
         <div className={classes.videoOverlay} />
           <div className={classes.content}>
             <Typography
-              variant={isDesktop ? "h2": "h3"}
+              variant={isDesktop ? "h2": "h4"}
               component="span"
               style={{ fontWeight: "semibold", textShadow: "1px 0px 1px #000", color: "#ffff" }}>
               {`${content["header-p1"]} `}
             </Typography>
             <Typography
-              variant={isDesktop ? "h2": "h3"}
+              variant={isDesktop ? "h2": "h4"}
               component="span"
               sx={{ fontWeight: "semibold", textShadow: "1px 0px 1px #000", color: "#ffff" }}>
               {`${content["header-p2"]} `}
@@ -122,75 +129,43 @@ function Home(props) {
       
     {datos.map((info) => (
       <>
-      <Box sx={{marginTop: 2, textAlign: 'center', marginBottom: 3}}>
-        <Container disableGutters maxWidth="lg">
-          <Divider color='#2D4080' sx={{borderColor: '#2D4080'}} style={{color: '#2D4080'}} variant='middle'>
-            <Typography variant='h5' color="#192E47">{`${info.title1}`}</Typography>
-          </Divider>
-            <Grid container columnGap={5} rowGap={1}
-            direction="row" 
-            sx={{display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center',
-            marginTop: 2, padding: 1}}>
-              <Grid item>
-                <img alt='jpm' src='\JPM.png' width={150}/>
-              </Grid>
-              <Grid item>
-                <img alt='usb' src='\USB.png' width={130}/>
-              </Grid>
-              <Grid item>
-                <img alt='ib' src='\IB.png' width={200}/>
-              </Grid>
-              <Grid item>
-                <img alt='rbc' src='\RBC-Logo.png' width={130}/>
-              </Grid>
-              <Grid item>
-                <img alt='pershing' src='\Pershing+Logo.png' width={150}/>
-              </Grid>
-              <Grid item>
-                <img alt='mercantil' src='\mercantil.png' width={150}/>
-              </Grid>
-            </Grid>
-        </Container>
-      </Box>
-      <Box sx={{backgroundColor: '#192E47', paddingBottom: 2}}>
+      <Box sx={{backgroundColor: '#192E47', paddingBottom: 3}}>
       <Box
-      sx={{paddingTop: 3, paddingRight: 3, paddingLeft: 3}}>
+      sx={{padding: 3,}}>
         <Stack >
           <Typography
-            variant="h4"
+            variant={isDesktop ? "h4" : 'h5'}
             sx={{ 
-            color: "#fff", textAlign: !isDesktop && 'center' }}>
+            color: "#fff", }}>
             {`${info.title2} `}
           </Typography>
         </Stack>
       </Box>
       <Grid container 
-      direction={isDesktop ? 'row' : "column"} 
-      spacing={3} 
+      direction={ 'row' } 
+      rowGap={4} 
+      columnGap={2}
       sx={{justifyContent: 'center', 
-      display: 'flex', 
-      padding: 3, marginBottom: 2}}>
+      display: 'flex', marginBottom: 2, paddingLeft: 3, paddingRight: 3}}>
           {info.text2.map((service) => (
-          <Grid item md={4} xs={6} >
+          <Grid item md={3.7} sm={5} xs={12}>
               <Stack direction='column' 
-              sx={{display: 'flex', alignItems: !isDesktop && 'center'}}
+              sx={{display: 'flex', }}
               >
-                <Box sx={{display: 'flex', justifyContent: !isDesktop && 'center', width: '100%'}}>
+                <Box sx={{display: 'flex', 
+                justifyContent: !isDesktop && 'center',}}>
                   <img alt="img" src={`${service.photo}`} 
-                  style={{width: isDesktop ? 370 : '85%', borderRadius: 5, 
+                  style={{width: '100%', borderRadius: 5, 
                   height: isDesktop ? '290px' : '240px'}}/>
                 </Box>
                   <Typography variant='h6' 
                   sx={{color: '#fff', 
                   fontWeight: 'bold', 
-                  marginTop: 2, textAlign: !isDesktop && 'center'}}>
+                  marginTop: 2, }}>
                   {`${service.title}`}
                   </Typography>
                   <Typography variant='body1' 
-                  sx={{color: '#fff', 
-                  textAlign: !isDesktop && 'center'}}>
+                  sx={{color: '#fff', }}>
                   {`${service.description}`}
                   </Typography>
                   <Link to={`/${service.id}`} style={{textDecoration: 'none'}} >
@@ -211,35 +186,42 @@ function Home(props) {
           ))}
         </Grid>
     </Box>
-    <Box sx={{width: '100%', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', 
-      paddingTop: 2, 
-      paddingBottom: 2, backgroundColor: '#fff'}}>
-        <Link to='/contact' 
-        style={{width: '100%', 
-        textDecoration: 'none', 
-        justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', color: "#192E47",  
-      "&:hover": {
-        color: "#fff", 
-       }}}>
-        <Button
-        variant="outlined"
-        sx={{width: isDesktop ? ('30%'): "100%", 
-        color: "#192E47", borderColor: '#192E47', 
-        "&:hover": {
-         color: "#fff", 
-         backgroundColor: '#192E47', borderColor: '#192E47'
-        }}}>
-          {props.data.language === 'EN' ? "Get your own portfolio" : "Consigue tu propio portafolio"}
-        </Button>
-        </Link>
+    <Box sx={{textAlign: 'center', marginTop: 1}}>
+        <Container disableGutters maxWidth="lg">
+          <Divider color='#2D4080' sx={{borderColor: '#2D4080'}} style={{color: '#2D4080'}} variant='middle'>
+            <Typography variant='h5' color="#192E47">{`${info.title1}`}</Typography>
+          </Divider>
+            <Grid container columnGap={5} rowGap={1}
+            direction="row" 
+            sx={{display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center',
+            marginTop: 2, padding: 1}}>
+              <Grid item>
+                <img alt='jpm' src='\JPM.png' width={110}/>
+              </Grid>
+              <Grid item>
+                <img alt='usb' src='\USB.png' width={80}/>
+              </Grid>
+              <Grid item>
+                <img alt='ib' src='\IB.png' width={150}/>
+              </Grid>
+              <Grid item>
+                <img alt='rbc' src='\RBC-Logo.png' width={80}/>
+              </Grid>
+              <Grid item>
+                <img alt='pershing' src='\Pershing+Logo.png' width={110}/>
+              </Grid>
+              <Grid item>
+                <img alt='mercantil' src='\mercantil.png' width={110}/>
+              </Grid>
+            </Grid>
+        </Container>
       </Box>
+    
       </>
       ))}
+      <FabComponent language={props.data.language} />
     </Box>
   )
 }

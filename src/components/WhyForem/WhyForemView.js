@@ -7,6 +7,7 @@ import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
+import FabComponent from '../common/FabComponent'
 import { about_data_EN, about_data_ES} from '../../utils/information'
 
 function WhyForemView(props) {
@@ -49,14 +50,15 @@ function WhyForemView(props) {
         sx={{textAlign: 'center', paddingTop: 2, paddingBottom: 4}}>
           {info.text4}
         </Typography>
-        <img src='/whyforem.jpg' width={isDesktop ? 700: 400} />
+        <img src='/whyforem.jpg' width={isDesktop ? 700: '100%'} />
       </Stack>
-    
-      <Box sx={{ padding: 3}}>
-        <Typography variant='h3' color="#000">{`${info.title2}`}</Typography>
+      <Box>
+        <Typography variant='h3' color="#000" sx={{padding: '20px 0 0 20px'}}>
+          {`${info.title2}`}
+        </Typography>
         <Typography variant='body1' 
         color="#000"
-        sx={{marginTop: 1}}>
+        sx={{marginTop: 1, padding: '0 20px 20px 20px'}}>
           {`${info.text_random}`}
         </Typography>
         <Grid container 
@@ -67,16 +69,14 @@ function WhyForemView(props) {
         marginTop: 2, marginBottom: 2}}>
           {info.text3.map((person) => (
             <Link to={`/${person.id}`} style={{textDecoration: 'none'}}>
-            <Grid item xs={11} md={4}  lg={10} 
-            sx={{display: 'flex', justifyContent: 'center'}}>
+            <Grid item md={4} xs={12}
+            sx={{display: 'flex'}}>
               <Stack direction='column' 
               sx={{
-                  alignItems: "flex-start",
-                  display: "flex",
                   cursor: 'pointer'
                 }}>
                   <img alt="img" src={`${person.photo}`} 
-                  style={{width: 220, borderRadius: 5, height:'216px'}}/>
+                  style={{width: '230px', borderRadius: 5, height:'220px'}}/>
                   <Typography variant='h6' sx={{color: '#000', fontWeight: 'bold'}}>
                   {`${person.name}`}
                   </Typography>
@@ -89,35 +89,9 @@ function WhyForemView(props) {
           ))}
         </Grid>
       </Box>
-      <Box sx={{width: '100%', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', 
-      paddingTop: 2, 
-      paddingBottom: 2, backgroundColor: '#192E47'}}>
-        <Link to='/contact' 
-        style={{width: '100%', 
-        textDecoration: 'none', 
-        justifyContent: 'center', 
-      alignItems: 'center', 
-      display: 'flex', color: "#fff",  
-      "&:hover": {
-        color: "#192E47", 
-       }}}>
-        <Button
-        variant="outlined"
-        sx={{width: isDesktop ? ('30%'): "100%", 
-        color: "#fff", borderColor: '#fff', 
-        "&:hover": {
-         color: "#192E47", 
-         backgroundColor: '#fff', borderColor: '#ffff'
-        }}}>
-          {props.data.language === 'EN' ? "Get your own portfolio" : "Consigue tu propio portafolio"}
-        </Button>
-        </Link>
-      </Box>
       </>
     ))}
+    <FabComponent language={props.data.language} />
     </>
   )
 }

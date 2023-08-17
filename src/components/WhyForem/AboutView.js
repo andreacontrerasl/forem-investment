@@ -5,6 +5,7 @@ import {useLocation, useNavigate} from 'react-router-dom';
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
+import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import IconButton from "@mui/material/IconButton"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -45,7 +46,7 @@ function AboutView(props) {
   })
 
   return (
-    <Container disableGutters maxWidth>
+    <Box >
       <Stack direction="row" spacing={1}
       sx={{backgroundColor: '#2D4080', padding: 2, alignItems: 'center'}}>
         <IconButton onClick={() => navigate(-1)}>
@@ -55,50 +56,40 @@ function AboutView(props) {
           {about_Data.title}
         </Typography>
       </Stack>
-      <Box sx={{display: 'flex', justifyContent: 'center'}}>
+      <Box sx={{display: 'flex', justifyContent: 'center', 
+      backgroundColor: '#192E47', padding: 2, minHeight:'60vh'}}>
       <Stack 
-      direction={isDesktop ? "row" : 'column'} 
-      spacing={2} 
-      sx={{padding: 2, alignItems: 'center', maxWidth:'lg'}}>
+      direction={isDesktop ? "row" : 'column'}  
+      sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <Stack direction={'column'} sx={{display: 'grid'}}>
         {about_Data?.photos.map((photo)=> (
           <img alt="img" 
           src={`/${photo} `}
           style={{borderRadius: '5px', paddingBottom: '10px'}} 
-          width={ isDesktop ? 500 : 400} />
+          width={ isDesktop ? 500 : '100%'} />
         ))}
         </Stack>
-        <Stack direction={"column"}
-        rowGap={2} columnGap={2}>
-          {about_Data?.description2.map((descript) => {
+        <Grid container direction={"row"} columnGap={2} rowGap={3}
+          sx={{display: 'flex', justifyContent: 'center'}}>
+            {about_Data?.description2.map((descript) => {
             return(
-              <Stack direction="row" 
-              columnGap={2}
+              <Grid item md={5} sm={6} xs={12}
               sx={{
-                backgroundColor: '#192E47', 
-              borderRadius: isDesktop ?  '50px' : '60px', 
-              height: isDesktop ? '100px' : '110px', display: 'flex', alignItems: 'center'}}>
-                <Box 
-                sx={{backgroundColor: 'rgb(217, 217, 217, .2)', 
-                borderRadius: '50%', 
-                padding: isDesktop ? "0px 24px 0px 24px" : "0px 27px 0px 27px", 
-                display: 'flex', alignItems: 'center', height: isDesktop ? '100px' : '110px',}}>
-                <CheckIcon fontSize='large' sx={{fontSize: '45px', color: "#fff"}} />
-
-                </Box>
-                <Typography variant={isDesktop ? 'body1' : 'body2'} 
+                border: '1px solid #fff', 
+                display: 'flex', alignItems: 'center', 
+                padding: '1rem', borderRadius: '20px', 
+                backgroundColor: 'rgb(255, 255, 255, .2)'}}>
+                  <Typography variant={'body1' } 
                   sx={{color: '#fff', marginRight: 2}}>
                   {`${descript}`}
                 </Typography>
-              </Stack>
+              </Grid>
             )
           })}
-        </Stack>
-        
-        
+        </Grid>
       </Stack>
       </Box>
-    </Container>
+    </Box>
   )
 }
 
