@@ -108,7 +108,7 @@ function Home(props) {
         className={classes.video} 
         autoPlay 
         muted loop onLoadedData={handleVideoLoad}>
-          <source src="\vcompress_3.MOV" type="video/mp4" />
+          <source src="\vcompress_1.MOV" type="video/mp4" />
         </video>
         <div className={classes.videoOverlay} />
           <div className={classes.content}>
