@@ -1,16 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
 import Button from "@mui/material/Button"
-import TextField from "@mui/material/TextField"
 import Typography from "@mui/material/Typography"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import { Card, CardContent, CardMedia } from '@mui/material';
-
-const { Configuration, OpenAIApi } = require("openai");
 
 function AskAPIView(props) {
 
@@ -27,9 +23,6 @@ function AskAPIView(props) {
     scrollToTop();
   }, []);
 
-  const configuration = new Configuration({
-    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-  });
 
   useEffect(()=> {
     getBlog()
@@ -50,36 +43,7 @@ function AskAPIView(props) {
 
   }
 
-  const openai = new OpenAIApi(configuration);
-  const [prompt, setPrompt] = useState("");
-  const [currentPrompt, setCurrentPrompt] = useState("")
-  const [apiResponse, setApiResponse] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    setPrompt(e.target.value)
-    setCurrentPrompt(e.target.value)
-
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    if(prompt){try {
-      const result = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: prompt,
-        temperature: 0.5,
-        max_tokens: 4000,
-      });
-      setApiResponse(result.data.choices[0].text);
-      setPrompt("")
-    } catch (e) {
-      console.log(e);
-      setApiResponse("Something is going wrong, Please try again.");
-    }}
-    setLoading(false);
-  };
+  
 
   return (
     <>
@@ -134,54 +98,31 @@ function AskAPIView(props) {
         <Typography variant={isDesktop ? 'h5': 'h6'}
          sx={{textAlign: 'center', 
         marginBottom: 5, marginTop: 5, color: '#2D4080'}}>
-          Please ask Ai any question relevant to your investments needs. 
+          { props.data.language === 'EN' ? `Please ask AI any question relevant to your investments needs. ` : 
+          'Por favor, haga a AI cualquier pregunta relevante para sus necesidades de inversión.'}
         </Typography>
        
         <Stack 
-        direction="column" 
+        direction="row" 
         spacing={2} 
         sx={{display: 'flex', 
         justifyContent: 'center', 
         width: '100%', alignItems: 'center' }}>
-          
-          
-          <Stack direction="row" spacing={2} 
-          sx={{width:'80%'}}>
-              <TextField
-                onChange={(e) => handleChange(e)}
-                value={prompt}
-                sx={{width: '85%'}}
-                placeholder="Ask Ai.."
-                variant="outlined"
-                multiline
-              />
-              <Button
-                variant="contained"
-                onClick={(e) => handleSubmit(e)}
-                sx={{ 
-                  color: "#fff", borderColor: '#192E47', backgroundColor: '#192E47',
-                  "&:hover": {
-                   color: "#fff", 
-                   backgroundColor: '#192E47', borderColor: '#192E47'
-                }}}
-              >
-                {loading ? "Asking..." : "Ask"}
-              </Button>
-          </Stack>
-          {apiResponse && (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                width: '50%'
-              }}
-            >
-              <Typography>
-                {apiResponse}
-              </Typography>
-            </Box>
-          )}
-          </Stack>
+            <Button variant="contained"
+            href="https://chat.openai.com/"
+              sx={{width: isDesktop ? ('30%'): "100%", 
+              color: "#fff", borderColor: '#192E47', 
+              backgroundColor: "#192E47",
+              }}>
+                {props.data.language === 'EN' ? 'Go to ChatGPT' : 'Ir a ChatGPT'}</Button>
+            <Button variant="contained"
+            href="https://bard.google.com/"
+              sx={{width: isDesktop ? ('30%'): "100%", 
+              color: "#fff", borderColor: '#192E47', 
+              backgroundColor: "#192E47",
+              }}>
+                {props.data.language === 'EN' ? 'Go to Bard AI' : 'Ir a Bard AI' }</Button>
+        </Stack>
       </Stack>
     </>
   )

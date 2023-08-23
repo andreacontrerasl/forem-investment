@@ -32,7 +32,13 @@ function FabComponent({language}) {
           bottom: isDesktop ? '2rem' : '1rem',
           right: isDesktop ? '2rem' : '1rem',
           zIndex: 9999,
-          transition: 'opacity 0.3s'
+          transition: 'opacity 0.3s',
+          backgroundColor: '#2A63B0',
+          color: '#fff',
+          "&:hover": {
+            color: "#2A63B0", 
+            backgroundColor: '#fff', borderColor: '#fffs'
+         }
         }}>
         {language === 'EN' ? 'Get your own portfolio' : 'Obten tu portafolio' }
       </Fab>

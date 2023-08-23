@@ -40,7 +40,7 @@ function WhyForemView(props) {
       sx={{
       display: 'flex', 
       justifyContent: 'center', 
-      backgroundColor: '#192E47', 
+      backgroundColor: '#182D46', 
       alignItems: 'center', padding: 2}}>
         <Typography variant={isDesktop ? 'h3' : 'h5'} color={"#fff"} 
         sx={{textAlign: 'center', paddingTop: 1}}>

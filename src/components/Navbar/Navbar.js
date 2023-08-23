@@ -38,7 +38,7 @@ function Navbar(props) {
     } else if (location.pathname === "/services") {
       setTabValue("Our Services")
     } else if (location.pathname === "/askai") {
-      setTabValue("Ask Ai")
+      setTabValue("Ask AI")
     } else if (location.pathname === "/contact") {
       setTabValue("Contact")
     }

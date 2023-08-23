@@ -74,10 +74,12 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": props.data.language === 'EN' ? "Bespoke Investment Portfolios" : "Cartera de bonos",
-    "header-p2": props.data.language === 'EN' ? "for High Net Worth Investors" : "para Inversionistas de Alto Patrimonio",
+    "header-p1": props.data.language === 'EN' ? "Customized Investment Portfolios" : "Carteras de inversión personalizadas",
+    "header-p2": props.data.language === 'EN' ? "for High-Net-Worth Investors" : "para inversionistas de alto patrimonio",
     "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC" : "Bienvenido a Forem Investments LLC",
-    "header-p4": props.data.language === 'EN' ? "The fixed-income investment boutique specializing in building Ai-driven, personalized bond portfolios for High Net Worth Families and Independent Advisors." : "La boutique de inversión de renta fija que se especializa en crear carteras de bonos personalizadas impulsadas por IA para familias de alto valor neto y asesores independientes.",
+    "header-p4": props.data.language === 'EN' ? "Tailored to your financial goals." : "Adaptado a sus metas financieras.",
+    "header-p5": props.data.language === 'EN' ? "Built using cutting-edge tools." : "Construido con herramientas de última generación",
+    "header-p6": props.data.language === 'EN' ? "Fixed Income investment boutique." : "Boutique de inversión de Renta Fija. ",
     "primary-action-EN": "Learn more",
     "primary-action-ES": "Ver más",
     ...props.content,
@@ -99,7 +101,6 @@ function Home(props) {
       <header  style={{position: 'relative',
     height: isDesktop ? '100vh' : '75vh',
     display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',}}>
       {isVideoLoading &&
@@ -134,7 +135,19 @@ function Home(props) {
               variant={isDesktop ? "h5": "body1"}
               component="span"
               sx={{textShadow: "1px 0px 1px #000", color: "#ffff", width: '90%', fontWeight: 'normal' }}>
-              {`${content["header-p4"]} `}
+              {`- ${content["header-p4"]} `}
+            </Typography>
+            <Typography
+              variant={isDesktop ? "h5": "body1"}
+              component="span"
+              sx={{textShadow: "1px 0px 1px #000", color: "#ffff", width: '90%', fontWeight: 'normal' }}>
+              {`- ${content["header-p5"]} `}
+            </Typography>
+            <Typography
+              variant={isDesktop ? "h5": "body1"}
+              component="span"
+              sx={{textShadow: "1px 0px 1px #000", color: "#ffff", width: '90%', fontWeight: 'normal' }}>
+              {`- ${content["header-p6"]} `}
             </Typography>
         </div>
       </header>
@@ -180,19 +193,6 @@ function Home(props) {
                   sx={{color: '#fff', }}>
                   {`${service.description}`}
                   </Typography>
-                  <Link to={`/${service.id}`} style={{textDecoration: 'none'}} >
-                    <Button variant='outlined'
-                    sx={{width: 115, 
-                      marginRight: 2,
-                      marginTop: 3,
-                      textTransform: 'capitalize',
-                      color: "#fff", borderColor: "#fff", "&:hover": {
-                        color: "#000", 
-                        backgroundColor: '#fff', borderColor: '#fff'
-                      }}}>
-                      {`${service.button}`}
-                    </Button>
-                  </Link>
               </Stack>
           </Grid>
           ))}
