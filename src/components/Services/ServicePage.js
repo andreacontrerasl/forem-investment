@@ -86,7 +86,8 @@ function ServicePage(props) {
                       backgroundColor: 'rgb(25, 46, 71, .2)'}}>
                       <Typography variant={'body1'} 
                         sx={{color: '#fff', marginRight: 2}}>
-                        {`${desc.title} ${desc.text}`}
+                          <span style={{ fontWeight: 'bold' }}>{desc.title}</span>
+                        {`${desc.text}`}
                       </Typography>
                     </Grid>)
               })}

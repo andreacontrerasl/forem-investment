@@ -161,7 +161,7 @@ function Home(props) {
           <Typography
             variant={isDesktop ? "h4" : 'h5'}
             sx={{ 
-            color: "#fff", }}>
+            color: "#fff", textAlign: 'center'}}>
             {`${info.title2} `}
           </Typography>
         </Stack>

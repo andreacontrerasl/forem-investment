@@ -66,7 +66,7 @@ const home_data_ES = [
                 photo: '/bespoke.webp',
                 title: "Carteras de inversión personalizadas",
                 button: 'Ver más',
-                description: 'Alcance sus objetivos financieros y de futuro, a través de recomendaciones personalizadas y asesoramiento individualizado.',
+                description: 'Alcance sus objetivos financieros a través de recomendaciones personalizadas y asesoramiento individualizado.',
                 description2: ["Escuche atentamente sus objetivos financieros, perfil de riesgo y horizonte temporal para evaluar los bonos disponibles.",
                 "Refinar la pantalla de bonos, seleccionando aquellos con métricas específicas de acuerdo con las condiciones económicas prevalecientes.",
                 "Filtrar aquellos bonos con calificaciones estables y favorables utilizando herramientas avanzadas de Inteligencia Artificial."],
@@ -132,13 +132,14 @@ const about_data_EN = [
             photo: "michele.webp",
             name: "Michele Di Carlo",
             position: 'Investment Analyst/ Advisor',
-            description: ["Three years of Investment Analyst experience. Registered Investment advisor Series 65. Worked on a startup financial modeling that raised over 2 million dollars.",
+            description: ["Three years of Investment Analyst experience. Registered Investment advisor Series 65.", 
+            "Worked on a startup financial modeling that raised over 2 million dollars.",
         "Graduated in Business administration with a Finance and Management major at the University of Miami with honors.",
         "Actively manages clients high net worth clients with millions of dollars on AUM.",
         "Fluent in English, Spanish, and Italian"]
         }],
         title3: "Why Forem Investments?",
-        text4: "As a fee-only advisor, we believe that working with us offers several advantages to our clients, including:"
+        text4: "“Working with us offers several advantages including:"
     }
 ]
 
@@ -183,7 +184,7 @@ const about_data_ES = [
         "Fluidez en inglés, español y experiencia en italiano."]
         }],
         title3: "Por qué Forem Investments?",
-        text4: "Como asesores de honorarios, creemos que trabajar con nosotros ofrece varias ventajas a nuestros clientes, que incluyen:"
+        text4: "Trabajar con nosotros tiene muchas ventajas incluyendo:"
     }
 ]
 
@@ -224,15 +225,17 @@ const servicesPg_data_EN = [
         {
             id: "custodian-data-aggregation",
             photo: "/course3.webp",
-            titleService: "Custodian Data Aggregation",
-            description1: ["Enhanced risk management", "Improved performance reporting", "Integral Portfolio View"],
-            descrition: [{title: `Enhanced risk management: `,
-                text: `a complete view of your risk exposure.`}, 
+            titleService: "Integration of custodian data",
+            description1: ["Integral Portfolio View", "Improved performance reporting", "Enhanced risk management"],
+            descrition: [
+            {title: `Integral portfolio view:`,
+                text: `a view of all of your portfolios and transactions across different custodians in one place.`},
             {title: `Improved performance reporting: `,
             text: `a single view of your investment's performance and areas of
             improvement.`}, 
-            {title: `Integral portfolio view:`,
-            text: `a view of all of your portfolios and transactions across different custodians in one place.`},],
+            {title: `Enhanced risk management: `,
+                text: `a complete view of your risk exposure.`},
+            ],
             buttonText: 'Learn more',
         }],
         title2: `Registered Investment Advisors on a Fee basis`,
@@ -255,14 +258,14 @@ const servicesPg_data_ES = [
             id: "family-office",
             photo: "/course1.jpg",
             titleService: "Family Office",
-            description1: ["Experiencia en gestión patrimonial", "Atención personalizada", "Discrecionalidad"],
+            description1: ["Experiencia en gestión patrimonial", "Atención personalizada", "Discreción"],
             descrition: [
-                {icon : <CurrencyExchangeIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
-                text :`Experiencia en gestión patrimonial: un equipo de profesionales experimentados que pueden brindar a las familias un asesoramiento financiero integral.`}, 
-                {icon: <AccountCircleIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
-                    text: `Atención personalizada: adapta sus servicios a las necesidades específicas de cada familia.`}, 
-                {icon: <SupervisedUserCircleIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
-                    text: `Discrecionalidad: Dar a las familias de discrecionalidad para gestionar su patrimonio.`},
+                {title : `Experiencia en gestión patrimonial: `,
+                text :`equipo de profesionales que brindan a las familias asesoramiento integral`}, 
+                {title: `Atención personalizada: `,
+                    text: `adaptamos sus servicios a las necesidades específicas de cada familia.`}, 
+                {title: `Discreción: `,
+                    text: `somos discretos en la gestión patrimonial de cada familia.`},
                 ],
             buttonText: 'Ver más',
         },
@@ -270,28 +273,28 @@ const servicesPg_data_ES = [
             id: "investments-portfolio",
             photo: "/course2.webp",
             titleService: "Portafolio de Inversiones",
-            description1: ["Investigación de bonos de inteligencia artificial", "Machine Learning sobre selección de renta variable", "AI on Portfolio Monitoring"],
+            description1: ["Investigación de bonos utilizando inteligencia artificial", "Machine Learning en la selección de renta variable", "Monitoreo de Portfolio apoyado con inteligencia artificial"],
             descrition: [
-            {icon: <TerminalIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
-                text: `Investigación de bonos de inteligencia artificial (IA): software impulsado por IA que brinda riesgo crediticio, probabilidad de cambios en la calificación crediticia y precio en relación con sus comparables.`}, 
-            {icon: <DvrIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
-                text: `Machine Learning (ML) sobre selección de renta variable: análisis fundamental y técnico utilizando indicadores y rankings internos para la selección de renta variable.`}, 
-            {icon: <TroubleshootIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large"/>,
-                text: `AI on Portfolio Monitoring: software de investigación de inversiones con acceso e interpretación de datos de empresas públicas y privadas.`},],
+            {title: `Investigación de bonos utilizando inteligencia artificial (IA): `,
+                text: ` software impulsado por IA el cual evalúa riesgo crediticio, probabilidad de cambios en la calificación crediticia y precio en relación con sus comparables.`}, 
+            {title: `Machine Learning en la selección de renta variable: `,
+                text: ` análisis fundamental y técnico utilizando indicadores y rankings internos para la selección de renta variable.`}, 
+            {title: `Monitoreo de Portfolio apoyado con inteligencia artificial: `,
+                text: ` software de investigación de inversiones con acceso e interpretación de datos de empresas públicas y privadas.`},],
             buttonText: 'Ver más',
         },
         {
             id: "custodian-data-aggregation",
             photo: "/course3.webp",
-            titleService: "Concentración de datos de diferentes custodios ",
-            description1: ["Gestión de riesgos mejorada", "Informes de rendimiento mejorados", "Visualiazacion completa de portfolios"],
+            titleService: "Integración de datos de diferentes custodios ",
+            description1: ["Visualiazacion completa de portfolios", "Informes de rendimiento mejorados", "Mayor eficiencia en el manejo de riesgo"],
             descrition: [
-            {icon: <ViewTimelineOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
-                text: `Gestión de riesgos mejorada: una visión completa de su exposición al riesgo.`}, 
-            {icon: <FactCheckOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
-                text: `Informes de rendimiento mejorados: una vista única del rendimiento de su inversión y las áreas de mejora.`}, 
-            {icon: <SsidChartOutlinedIcon sx={{color: '#fff', fontSize: '40px'}} fontSize= "large" />,
-                text: `Visualiazacion completa de portfolios: una vista de todas sus carteras y transacciones a través de diferentes custodios en un solo lugar.`},],
+            {title: `Visualiazacion completa de portfolios: `,
+                text: ` una vista de todas sus carteras y transacciones a través de diferentes custodios en un solo lugar.`},
+            {title: `Informes de rendimiento mejorados: `,
+                text: `una vista global de rendimiento de sus inversiones y las áreas de mejora`}, 
+            {title: `Mayor eficiencia en el manejo de riesgo: `,
+                text: ` una visión completa de su exposición al riesgo.`},],
             buttonText: 'Ver más',
         }],
         title2: `Asesores de inversión registrados a comisión`,

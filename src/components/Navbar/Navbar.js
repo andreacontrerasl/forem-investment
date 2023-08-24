@@ -47,14 +47,15 @@ function Navbar(props) {
   return (
     <ScrollToColor>
     <AppBar
-      position={location.pathname=== "/" ? "fixed" : "sticky"}>
+      position={location.pathname=== "/" ? "fixed" : "sticky"}
+      sx={{display: 'flex', alignItems: 'center'}}>
       <Container disableGutters maxWidth="100%">
         <Toolbar>
             <Link to="/" style={{textDecoration: 'none'}}>
               <img
-                src="\picture.png"
+                src="\picture1.png"
                 alt="Forem"
-                style={{width: isDesktop ? 150 : 120, height: isDesktop ? 55 : 45}}
+                style={{width: isDesktop ? 170 : 120, height: isDesktop ? 70 : 45}}
               />
             </Link>
             {isDesktop ? (
