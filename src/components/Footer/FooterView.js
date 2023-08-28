@@ -26,7 +26,7 @@ function FooterView() {
         <Grid item md={2}>
           <Link to="/" style={{textDecoration: 'none'}}>
             <img
-              src="\picture.png"
+              src="\picture1.png"
               alt="Forem"
               style={{width: 120, height: 45, paddingLeft: '5px'}}
             />
