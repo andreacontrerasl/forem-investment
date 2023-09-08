@@ -228,13 +228,13 @@ const servicesPg_data_EN = [
             titleService: "Integration of custodian data",
             description1: ["Integral Portfolio View", "Improved performance reporting", "Enhanced risk management"],
             descrition: [
-            {title: `Integral portfolio view:`,
-                text: `a view of all of your portfolios and transactions across different custodians in one place.`},
+            {title: `Integral portfolio view: `,
+                text: ` a view of all of your portfolios and transactions across different custodians in one place.`},
             {title: `Improved performance reporting: `,
-            text: `a single view of your investment's performance and areas of
+            text: ` a single view of your investment's performance and areas of
             improvement.`}, 
             {title: `Enhanced risk management: `,
-                text: `a complete view of your risk exposure.`},
+                text: ` a complete view of your risk exposure.`},
             ],
             buttonText: 'Learn more',
         }],
@@ -292,7 +292,7 @@ const servicesPg_data_ES = [
             {title: `Visualiazacion completa de portfolios: `,
                 text: ` una vista de todas sus carteras y transacciones a través de diferentes custodios en un solo lugar.`},
             {title: `Informes de rendimiento mejorados: `,
-                text: `una vista global de rendimiento de sus inversiones y las áreas de mejora`}, 
+                text: ` una vista global de rendimiento de sus inversiones y las áreas de mejora`}, 
             {title: `Mayor eficiencia en el manejo de riesgo: `,
                 text: ` una visión completa de su exposición al riesgo.`},],
             buttonText: 'Ver más',

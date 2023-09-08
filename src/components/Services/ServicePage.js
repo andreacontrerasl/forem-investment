@@ -50,12 +50,14 @@ function ServicePage(props) {
     <Box width="100%">
       <Stack direction="row" spacing={1}
       sx={{backgroundColor: '#2D4080', padding: 2, alignItems: 'center'}}>
+        <Container disableGutters maxWidth='lg' sx={{display: 'flex', alignItems: 'center'}}>
         <IconButton onClick={() => navigate(-1)}>
           <ArrowBackIcon sx={{color: '#fff'}} />
         </IconButton>
         <Typography variant='h6' sx={{color: '#fff'}}>
           {service_data.titleService}
         </Typography>
+        </Container>
       </Stack>
       <div  style={{position: 'relative',
       width: '100%',
@@ -71,7 +73,7 @@ function ServicePage(props) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         opacity: 0.4,}}></div>
-          <Container disableGutters 
+          <Container disableGutters  maxWidth='lg'
           sx={{position: 'absolute',
             color: '#fff', height: '100%', display: 'flex', alignItems: 'center'}}>
             <Grid container direction="row" columnGap={4} rowGap={4}

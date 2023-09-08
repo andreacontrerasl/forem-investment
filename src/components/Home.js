@@ -11,8 +11,9 @@ import Button from "@mui/material/Button"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import FabComponent from './common/FabComponent';
-import CircularProgress from '@mui/material/CircularProgress';
 import {home_data_EN, home_data_ES } from '../utils/information'
+import { useLoading } from '../context/LoadingContext';
+import LoadingComponent from './LoadingComponent';
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -54,10 +55,19 @@ const useStyles = makeStyles((theme) => ({
 
 function Home(props) {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const { showLoading, hideLoading, isLoading } = useLoading();
 
   const handleVideoLoad = () => {
     setIsVideoLoading(false);
   };
+
+  useEffect(() => {
+    if(isVideoLoading){
+      showLoading()
+    }else{
+      hideLoading()
+    }
+  }, [isVideoLoading]);
 
   const classes = useStyles()
   let datos
@@ -74,8 +84,8 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": props.data.language === 'EN' ? "Customized Investment Portfolios" : "Carteras de inversión personalizadas",
-    "header-p2": props.data.language === 'EN' ? "for High-Net-Worth Investors" : "para inversionistas de alto patrimonio",
+    "header-p1": props.data.language === 'EN' ? "We simplify yout investments" : "Simplificamos tus inversiones",
+    "header-p2": props.data.language === 'EN' ? "in individual bond portfolios" : "en carteras de bonos individuales",
     "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC" : "Bienvenido a Forem Investments LLC",
     "header-p4": props.data.language === 'EN' ? "Tailored to your financial goals." : "Adaptado a sus metas financieras.",
     "header-p5": props.data.language === 'EN' ? "Built using cutting-edge tools." : "Construido con herramientas de última generación",
@@ -103,8 +113,6 @@ function Home(props) {
     display: 'flex',
     alignItems: 'center',
     overflow: 'hidden',}}>
-      {isVideoLoading &&
-      <CircularProgress />}
         <video id="headerVideo" 
         className={classes.video} 
         autoPlay 
@@ -112,6 +120,7 @@ function Home(props) {
           <source src="\vcompress_1.MOV" type="video/mp4" />
         </video>
         <div className={classes.videoOverlay} />
+        <Container disableGutters maxWidth="lg">
           <div className={classes.content}>
             <Typography
               variant={isDesktop ? "h2": "h4"}
@@ -150,11 +159,13 @@ function Home(props) {
               {`- ${content["header-p6"]} `}
             </Typography>
         </div>
+        </Container>
       </header>
       
     {datos.map((info) => (
       <>
       <Box sx={{backgroundColor: '#192E47', paddingBottom: 3}}>
+        <Container disableGutters maxWidth="lg">
       <Box
       sx={{padding: 3,}}>
         <Stack >
@@ -197,9 +208,10 @@ function Home(props) {
           </Grid>
           ))}
         </Grid>
+      </Container>
     </Box>
     <Box sx={{textAlign: 'center', marginTop: 1}}>
-        <Container disableGutters maxWidth="lg">
+      <Container disableGutters maxWidth="lg">
           <Divider color='#2D4080' sx={{borderColor: '#2D4080'}} style={{color: '#2D4080'}} variant='middle'>
             <Typography variant='h5' color="#192E47">{`${info.title1}`}</Typography>
           </Divider>
@@ -230,10 +242,11 @@ function Home(props) {
             </Grid>
         </Container>
       </Box>
-    
       </>
       ))}
       <FabComponent language={props.data.language} />
+      {isLoading &&
+      <LoadingComponent />}
     </Box>
   )
 }

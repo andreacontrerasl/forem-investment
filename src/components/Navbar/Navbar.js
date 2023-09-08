@@ -49,13 +49,13 @@ function Navbar(props) {
     <AppBar
       position={location.pathname=== "/" ? "fixed" : "sticky"}
       sx={{display: 'flex', alignItems: 'center'}}>
-      <Container disableGutters maxWidth="100%">
+      <Container disableGutters maxWidth="lg">
         <Toolbar>
             <Link to="/" style={{textDecoration: 'none'}}>
               <img
                 src="\Picture1.png"
                 alt="Forem"
-                style={{width: isDesktop ? 170 : 120, height: isDesktop ? 70 : 45}}
+                style={{width: isDesktop ? 170 : 140, height: isDesktop ? 70 : 55}}
               />
             </Link>
             {isDesktop ? (

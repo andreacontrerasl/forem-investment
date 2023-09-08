@@ -50,12 +50,14 @@ function PersonInformation(props) {
     <Container disableGutters maxWidth >
       <Stack direction="row" spacing={1}
       sx={{backgroundColor: '#2D4080', padding: 2, alignItems: 'center'}}>
+        <Container disableGutters maxWidth='lg' sx={{display: 'flex', alignItems: 'center'}}>
         <IconButton onClick={() => navigate(-1)}>
           <ArrowBackIcon sx={{color: '#fff'}} />
         </IconButton>
         <Typography variant='h6' sx={{color: '#fff'}}>
           Meet our team
         </Typography>
+        </Container>
       </Stack>
       <Box sx={{display: 'flex', 
       alignItems: 'center', 

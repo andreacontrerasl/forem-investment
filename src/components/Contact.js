@@ -63,7 +63,7 @@ function Contact(props) {
       message,
     } = data
     try {
-      let response = await fetch('http://127.0.0.1:8000/api/contact/create', {
+      let response = await fetch('http://184.72.150.6:8000/api/contact/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,6 +94,7 @@ function Contact(props) {
   return (
     <>
     <Box sx={{ padding: 2, backgroundColor: '#192E47'}}>
+      <Container disableGutters maxWidth="lg">
         <Typography 
         variant='h4' 
         color="#fff"
@@ -139,8 +140,10 @@ function Contact(props) {
               </Link>
           </Stack>
         </Stack>
+        </Container>
     </Box>
       <Box sx={{backgroundColor: '#fff', padding: 2}}>
+        <Container disableGutters maxWidth='lg'>
       <Divider color="#192E47" sx={{paddingTop: 1}} variant='middle'>
           <Typography variant='h6' color="#192E47">{props.data.language === 'ES' ? "Envíanos un mensaje" : `Send us a message`}</Typography>
         </Divider>
@@ -226,6 +229,7 @@ function Contact(props) {
           {snackMessage?.message}
         </Alert>
       </Snackbar>
+      </Container>
       </Box>
     </>
   )

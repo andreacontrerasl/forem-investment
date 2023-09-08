@@ -49,15 +49,18 @@ function AboutView(props) {
     <Box >
       <Stack direction="row" spacing={1}
       sx={{backgroundColor: '#2D4080', padding: 2, alignItems: 'center'}}>
+        <Container disableGutters maxWidth='lg' sx={{display: 'flex', alignItems: 'center'}}>
         <IconButton onClick={() => navigate(-1)}>
           <ArrowBackIcon sx={{color: '#fff'}} />
         </IconButton>
         <Typography variant='h6' sx={{color: '#fff'}}>
           {about_Data.title}
         </Typography>
+        </Container>
       </Stack>
       <Box sx={{display: 'flex', justifyContent: 'center', 
       backgroundColor: '#192E47', padding: 2, minHeight:'60vh'}}>
+        <Container disableGutters maxWidth='lg'>
       <Stack 
       direction={isDesktop ? "row" : 'column'}  
       sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
@@ -88,6 +91,7 @@ function AboutView(props) {
           })}
         </Grid>
       </Stack>
+      </Container>
       </Box>
     </Box>
   )

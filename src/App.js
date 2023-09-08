@@ -13,11 +13,13 @@ import WhyForemView from './components/WhyForem/WhyForemView';
 import ServicePage from './components/Services/ServicePage'
 import PersonInformation from './components/WhyForem/PersonInformation';
 import AboutView from './components/WhyForem/AboutView';
+import { LoadingProvider } from './context/LoadingContext';
 
 function App() {
   const [language, setLanguage] = useState('EN')
   return (
     <ThemeProvider theme={mainTheme}>
+      <LoadingProvider>
       <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
         <Navbar data={{language, setLanguage}}/>
@@ -45,6 +47,7 @@ function App() {
         
         </div>
       </Router>
+      </LoadingProvider>
     </ThemeProvider>
   );
 }

@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import { Link} from 'react-router-dom'
+import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
-import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
@@ -42,6 +42,10 @@ function WhyForemView(props) {
       justifyContent: 'center', 
       backgroundColor: '#182D46', 
       alignItems: 'center', padding: 2}}>
+        <Container disableGutters maxWidth="lg" sx={{
+      display: 'flex', 
+      justifyContent: 'center',  
+      alignItems: 'center', padding: 2, flexDirection: 'column'}}>
         <Typography variant={isDesktop ? 'h3' : 'h5'} color={"#fff"} 
         sx={{textAlign: 'center', paddingTop: 1}}>
           {info.title3}
@@ -51,8 +55,10 @@ function WhyForemView(props) {
           {info.text4}
         </Typography>
         <img src={props.data.language === 'EN' ? '/whyforem.webp' : '/whyforemes.webp'} width={isDesktop ? 700: '100%'} />
+        </Container>
       </Stack>
       <Box>
+        <Container disableGutters maxWidth='lg'>
         <Typography variant={isDesktop ? 'h3' : 'h4'} color="#000" sx={{padding: '20px 0 0 20px'}}>
           {`${info.title2}`}
         </Typography>
@@ -88,6 +94,7 @@ function WhyForemView(props) {
             </Link>
           ))}
         </Grid>
+        </Container>
       </Box>
       </>
     ))}

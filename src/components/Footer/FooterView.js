@@ -1,4 +1,5 @@
 import React from 'react'
+import Container from "@mui/material/Container"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {Link} from 'react-router-dom';
@@ -18,6 +19,7 @@ function FooterView() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
   return (
     <Box sx={{backgroundColor: "#363636", width: '100%', marginTop: 'auto',}}>
+      <Container disableGutters maxWidth="lg">
     <Grid
       container
       direction={isDesktop ? "row" : "column"}
@@ -121,6 +123,7 @@ function FooterView() {
           </Typography>
         </Box>}
     </Stack>
+    </Container>
     </Box>
   )
 }

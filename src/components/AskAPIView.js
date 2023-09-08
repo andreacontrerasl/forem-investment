@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Grid from "@mui/material/Grid"
+import Container from "@mui/material/Container"
 import Stack from "@mui/material/Stack"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
@@ -29,7 +30,7 @@ function AskAPIView(props) {
   }, [])
 
   let getBlog = async() =>{
-    let response = await fetch('http://127.0.0.1:8000/api/blog/', {
+    let response = await fetch('http://184.72.150.6:8000/api/blog/', {
         method:'GET',
         headers:{
             'Content-Type':'application/json',
@@ -50,6 +51,7 @@ function AskAPIView(props) {
       <Stack direction={"column"} 
       sx={{backgroundColor: "#192E47", 
       width: '100%', paddingBottom: 5}}>
+        <Container disableGutters maxWidth='lg'>
         <Grid container direction={isDesktop ? "row" : "column"}
         rowGap={3} 
         columnGap={2}
@@ -65,7 +67,7 @@ function AskAPIView(props) {
                   <CardMedia
                     component="img"
                     height="140"
-                    image={`http://127.0.0.1:8000${item.image}`}
+                    image={`http://184.72.150.6:8000${item.image}`}
                     alt="PDF Preview"
                   />
                   <CardContent>
@@ -91,10 +93,12 @@ function AskAPIView(props) {
           })}
           
         </Grid>
+        </Container>
       </Stack>
       <Stack direction={"column"} 
       sx={{backgroundColor: "#fff", 
       width: '100%', paddingBottom: 10}}>
+        <Container disableGutters maxWidth='lg'>
         <Typography variant={isDesktop ? 'h5': 'h6'}
          sx={{textAlign: 'center', 
         marginBottom: 5, marginTop: 5, color: '#2D4080'}}>
@@ -123,6 +127,7 @@ function AskAPIView(props) {
               }}>
                 {props.data.language === 'EN' ? 'Go to Bard AI' : 'Ir a Bard AI' }</Button>
         </Stack>
+        </Container>
       </Stack>
     </>
   )

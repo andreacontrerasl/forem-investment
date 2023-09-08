@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import { Link} from 'react-router-dom'
+import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Stack from "@mui/material/Stack"
@@ -41,6 +42,7 @@ function Services(props) {
       paddingBottom: 2, 
       display: 'flex', 
       flexDirection: 'column', justifyContent: 'center',}}>
+        <Container disableGutters maxWidth='lg'>
         <Typography variant='h4' 
         sx={{color: '#fff', paddingTop: 4, 
         paddingRight: 3, paddingLeft: 3, textAlign: 'start'}}>{info.banner1}</Typography>
@@ -90,6 +92,7 @@ function Services(props) {
           </Grid>
             ))}
         </Grid>
+        </Container>
       </Box>
       </>
     )})}
