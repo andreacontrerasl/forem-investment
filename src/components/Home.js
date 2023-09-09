@@ -84,7 +84,7 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": props.data.language === 'EN' ? "We simplify yout investments" : "Simplificamos tus inversiones",
+    "header-p1": props.data.language === 'EN' ? "We simplify your investments" : "Simplificamos tus inversiones",
     "header-p2": props.data.language === 'EN' ? "in individual bond portfolios" : "en carteras de bonos individuales",
     "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC" : "Bienvenido a Forem Investments LLC",
     "header-p4": props.data.language === 'EN' ? "Tailored to your financial goals." : "Adaptado a sus metas financieras.",
