@@ -84,8 +84,8 @@ function Home(props) {
   }
 
   const content = {
-    "header-p1": props.data.language === 'EN' ? "We simplify your investments" : "Simplificamos tus inversiones",
-    "header-p2": props.data.language === 'EN' ? "in individual bond portfolios" : "en carteras de bonos individuales",
+    "header-p1": props.data.language === 'EN' ? "Customized Investment Portfolios" : "Carteras de inversión personalizadas",
+    "header-p2": props.data.language === 'EN' ? "for High-Net-Worth Investors" : "para inversionistas de alto patrimonio",
     "header-p3": props.data.language === 'EN' ? "Welcome to Forem Investments LLC" : "Bienvenido a Forem Investments LLC",
     "header-p4": props.data.language === 'EN' ? "Tailored to your financial goals." : "Adaptado a sus metas financieras.",
     "header-p5": props.data.language === 'EN' ? "Built using cutting-edge tools." : "Construido con herramientas de última generación",
