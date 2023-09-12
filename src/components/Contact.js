@@ -63,7 +63,7 @@ function Contact(props) {
       message,
     } = data
     try {
-      let response = await fetch('http://184.72.150.6:8000/api/contact/create', {
+      let response = await fetch('http://54.211.179.204:8000/api/contact/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

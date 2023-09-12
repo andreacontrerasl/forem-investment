@@ -30,7 +30,7 @@ function AskAPIView(props) {
   }, [])
 
   let getBlog = async() =>{
-    let response = await fetch('http://184.72.150.6:8000/api/blog/', {
+    let response = await fetch('http://54.211.179.204:8000/api/blog/', {
         method:'GET',
         headers:{
             'Content-Type':'application/json',
@@ -67,7 +67,7 @@ function AskAPIView(props) {
                   <CardMedia
                     component="img"
                     height="140"
-                    image={`http://184.72.150.6:8000${item.image}`}
+                    image={`http://54.211.179.204:8000${item.image}`}
                     alt="PDF Preview"
                   />
                   <CardContent>
