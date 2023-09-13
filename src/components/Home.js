@@ -234,7 +234,7 @@ function Home(props) {
                 <img alt='rbc' src='\RBC-Logo.png' width={80}/>
               </Grid>
               <Grid item>
-                <img alt='pershing' src='\Pershing+Logo.png' width={110}/>
+                <img alt='pershing' src='\PershingLogo.png' width={110}/>
               </Grid>
               <Grid item>
                 <img alt='mercantil' src='\mercantil.png' width={110}/>

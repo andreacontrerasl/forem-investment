@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
+import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
+import TextField from "@mui/material/TextField"
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
@@ -20,6 +22,7 @@ import FormInputText from './common/FormInputText'
 function Contact(props) {
   const [openSnack, setOpenSnack] = useState(false)
   const [snackMessage, setSnackMessage] = useState(null)
+  const form = useRef();
 
   const handleCloseSnack = (event, reason) => {
     if (reason === "clickaway") {
@@ -55,7 +58,7 @@ function Contact(props) {
   const methods = useForm({ defaultValues })
   const { handleSubmit, control } = methods
 
-  const onSubmit = async (data) =>{
+  {/*const onSubmit = async (data) =>{
     const {
       name,
       email,
@@ -63,7 +66,7 @@ function Contact(props) {
       message,
     } = data
     try {
-      let response = await fetch('http://54.211.179.204:8000/api/contact/create', {
+      let response = await fetch('http://54.147.184.8:8000/api/contact/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +90,27 @@ function Contact(props) {
     } catch (error) {
       console.error('Error:', error);
     }
-  }
+  }*/}
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_hlx6bhf', 'template_mgkh1bt', form.current, 'zWdAqZe5_WxWx6qXA')
+      .then((result) => {
+          setSnackMessage({
+            message: "Form send!",
+            color: "success"
+          })
+          setOpenSnack(true)
+      }, (error) => {
+        
+        setSnackMessage({
+          message: "An error has occure, please try again!",
+          color: "error"
+        })
+        setOpenSnack(true)
+      });
+  };
 
   
 
@@ -148,7 +171,7 @@ function Contact(props) {
           <Typography variant='h6' color="#192E47">{props.data.language === 'ES' ? "Envíanos un mensaje" : `Send us a message`}</Typography>
         </Divider>
       <Container maxWidth="md" sx={{marginTop: 3}}>
-        <Grid container direction={isDesktop ? "row" : "column"} spacing={2} sx={{marginBottom: 2}}>
+        {/*<Grid container direction={isDesktop ? "row" : "column"} spacing={2} sx={{marginBottom: 2}}>
           <Grid item xs={6}>
             <FormInputText
             name="name"
@@ -209,7 +232,8 @@ function Contact(props) {
         <Stack 
         sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 2}}>
         <Button variant="outlined"
-         onClick={handleSubmit(onSubmit)}
+         //onClick={handleSubmit(onSubmit)}
+         onClick={handleSubmit(sendEmail)}
          sx={{width: isDesktop ? ('30%'): "100%", 
          color: "#192E47", borderColor: '#192E47', 
          "&:hover": {
@@ -218,7 +242,60 @@ function Contact(props) {
         }}}>
           {props.data.language === 'ES' ? "Enviar mensaje" : "Send message"}
         </Button>
-        </Stack>
+      </Stack>*/}
+      <form ref={form} onSubmit={sendEmail}>
+      <Grid container direction={isDesktop ? "row" : "column"} spacing={2} sx={{marginBottom: 2}}>
+          <Grid item xs={6}>
+          <TextField
+        size="small"
+        name="user_name"
+        fullWidth
+        label={"Full Name"}
+        variant="outlined"
+      />
+          </Grid>
+          <Grid item xs={6}>
+          <TextField
+        size="small"
+        name="user_email"
+        fullWidth
+        label={"Email"}
+        variant="outlined"
+      />
+          </Grid>
+        </Grid>
+        <Grid container direction="column" spacing={2}>
+          <Grid item xs={12}>
+          <TextField
+        size="small"
+        name="user_about"
+        fullWidth
+        label={"About"}
+        variant="outlined"
+      />
+          </Grid>
+          <Grid item xs={12}>
+          <TextField
+            size="small"
+            name="message"
+            fullWidth
+            label={"Body"}
+            variant="outlined"
+            multiline
+            rows={4}
+          />
+          </Grid>
+        </Grid>
+        <Stack 
+        sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 2}}>
+        <input type="submit" value="Send" 
+        style={{width: isDesktop ? ('30%'): "100%", height: '36px',
+        backgroundColor: '#192E47', borderRadius: '5px',
+         color: "#fff", border: '1px solid #192E47', cursor: 'pointer',
+        }} />
+      </Stack>
+      
+    </form>
         </Container>
         <Snackbar
         open={openSnack}

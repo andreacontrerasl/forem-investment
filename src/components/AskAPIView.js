@@ -9,6 +9,33 @@ import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import { Card, CardContent, CardMedia } from '@mui/material';
 
+const blogInfo = [
+  {
+    id: 1,
+    title: "The Recession Obsession",
+    description: "It’s hard to miss the threats to the economy. In the United States, those include banking turmoil, tighter credit, diminished consumer savings, declining corporate profits and rising lay-offs.",
+    image: '/Recession.png',
+    url: "https://assets.jpmprivatebank.com/content/dam/jpm-wm-aem/campaign/mid-year-outlook/mid-year-outlook-2023.pdf",
+    status: true,
+  },
+  {
+    id: 2,
+    title: "Balancing act",
+    description: "As we approach the second half of 2023, markets are pricing a benign path forward. Implied equity volatility is the lowest since the onset of the pandemic, and the S&P 500 is up 20% from October’s low.",
+    image: '/Balancing.png',
+    url: "https://drive.google.com/file/d/1MR6yM8Xz9z8HpBKSsRqEpZcsIREAIe5f/view?usp=sharing",
+    status: true,
+  },
+  {
+    id: 3,
+    title: "Investor's Edge",
+    description: "As the average life expectancy continues to climb there’s an increase in the diagnosis of cognitive decline, including Alzheimer’s disease and other forms of dementia.",
+    image: '/Investors.png',
+    url: "https://drive.google.com/file/d/14KqxI4hoj2tu-9SnR0NuURAHLYvAalwM/view",
+    status: true,
+  },
+]
+
 function AskAPIView(props) {
 
   const [blog, setBlog] = useState([])
@@ -25,24 +52,23 @@ function AskAPIView(props) {
   }, []);
 
 
-  useEffect(()=> {
+  {/*useEffect(()=> {
     getBlog()
-  }, [])
+  }, [])*/}
 
-  let getBlog = async() =>{
-    let response = await fetch('http://54.211.179.204:8000/api/blog/', {
+  {/*let getBlog = async() =>{
+    let response = await fetch('http://54.147.184.8:8000/api/blog/', {
         method:'GET',
         headers:{
             'Content-Type':'application/json',
-        }
+        },
     })
     let data = await response.json()
 
     if(response.status === 200){
       setBlog(data)
     }
-
-  }
+  }*/}
 
   
 
@@ -56,9 +82,10 @@ function AskAPIView(props) {
         rowGap={3} 
         columnGap={2}
         sx={{display: 'flex', justifyContent: 'center', marginTop: 5}}>
-          {blog.map((item) => {
-            const imageUrl = item.image
-            const newImageUrl = imageUrl.replace('/blog_images', '');
+          {blogInfo.map((item) => {
+            console.log(item)
+            //const imageUrl = item.image
+            //const newImageUrl = imageUrl.replace('/blog_images', '');
             return(
               <>
               {item.status && (
@@ -67,7 +94,7 @@ function AskAPIView(props) {
                   <CardMedia
                     component="img"
                     height="140"
-                    image={`http://54.211.179.204:8000${item.image}`}
+                    image={item.image}
                     alt="PDF Preview"
                   />
                   <CardContent>
