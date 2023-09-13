@@ -40,7 +40,7 @@ function Contact(props) {
   }, []);
 
   const content = {
-    "header-p1": props.data.language === 'ES' ? "Contact us" : "Contáctanos",
+    "header-p1": props.data.language === 'EN' ? "Contact us" : "Contáctanos",
     "header-p2": props.data.language === 'ES' ? "No dudes en llamarnos o enviarnos un correo electrónico, o utilice nuestro formulario de contacto para enviarnos un mensaje. ¡Esperamos escuchar de ti!" : "Please feel free to call or email us, or use our contact form to get in touch with us. We look forward to hearing from you!",
     "primary-action": "Learn more",
     ...props.content,
