@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import { useTheme } from "@mui/material/styles"
-import { makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from "@mui/material/useMediaQuery"
 import {useLocation, useNavigate} from 'react-router-dom';
 import Container from "@mui/material/Container"

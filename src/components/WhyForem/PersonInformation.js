@@ -5,7 +5,6 @@ import {useLocation, useNavigate} from 'react-router-dom';
 import Container from "@mui/material/Container"
 import Box from "@mui/material/Box"
 import Stack from "@mui/material/Stack"
-import Divider from "@mui/material/Divider"
 import Typography from "@mui/material/Typography"
 import IconButton from "@mui/material/IconButton"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

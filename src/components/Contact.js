@@ -11,13 +11,11 @@ import Stack from "@mui/material/Stack"
 import Alert from "@mui/material/Alert"
 import Snackbar from "@mui/material/Snackbar"
 import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
 import { useTheme } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
-import FormInputText from './common/FormInputText'
 
 function Contact(props) {
   const [openSnack, setOpenSnack] = useState(false)
@@ -45,6 +43,7 @@ function Contact(props) {
     "primary-action": "Learn more",
     ...props.content,
   }
+
   const defaultValues = {
     email: "",
     name: "",
@@ -171,78 +170,6 @@ function Contact(props) {
           <Typography variant='h6' color="#192E47">{props.data.language === 'ES' ? "Envíanos un mensaje" : `Send us a message`}</Typography>
         </Divider>
       <Container maxWidth="md" sx={{marginTop: 3}}>
-        {/*<Grid container direction={isDesktop ? "row" : "column"} spacing={2} sx={{marginBottom: 2}}>
-          <Grid item xs={6}>
-            <FormInputText
-            name="name"
-            control={control}
-            label="Name"
-            rules={{
-              maxLength: {
-                value: 48,
-                message: "Max length of First Name is 48 characters.",
-              },
-            }}
-            />
-          </Grid>
-          <Grid item xs={6}>
-          <FormInputText
-            name="email"
-            control={control}
-            label="Email"
-            rules={{
-              maxLength: {
-                value: 48,
-                message: "Max length of First Name is 48 characters.",
-              },
-            }}
-          />
-          </Grid>
-        </Grid>
-        <Grid container direction="column" spacing={2}>
-          <Grid item xs={12}>
-          <FormInputText
-            name="about"
-            control={control}
-            label="About"
-            rules={{
-              maxLength: {
-                value: 48,
-                message: "Max length of First Name is 48 characters.",
-              },
-            }}
-          />
-          </Grid>
-          <Grid item xs={12}>
-            <FormInputText
-              name="message"
-              control={control}
-              label="Body"
-              multiline
-              rules={{
-                maxLength: {
-                  value: 48,
-                  message: "Max length of First Name is 48 characters.",
-                },
-              }}
-            />
-
-          </Grid>
-        </Grid>
-        <Stack 
-        sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 2}}>
-        <Button variant="outlined"
-         //onClick={handleSubmit(onSubmit)}
-         onClick={handleSubmit(sendEmail)}
-         sx={{width: isDesktop ? ('30%'): "100%", 
-         color: "#192E47", borderColor: '#192E47', 
-         "&:hover": {
-          color: "#fff", 
-          backgroundColor: '#192E47', borderColor: '#192E47'
-        }}}>
-          {props.data.language === 'ES' ? "Enviar mensaje" : "Send message"}
-        </Button>
-      </Stack>*/}
       <form ref={form} onSubmit={sendEmail}>
       <Grid container direction={isDesktop ? "row" : "column"} spacing={2} sx={{marginBottom: 2}}>
           <Grid item xs={6}>

@@ -43,7 +43,6 @@ function FabComponent({language}) {
         {language === 'EN' ? 'Get your own portfolio' : 'Obten tu portafolio' }
       </Fab>
       </Link>}
-      
     </>
   )
 }

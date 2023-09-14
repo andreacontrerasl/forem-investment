@@ -12,7 +12,6 @@ import AskAPIView from './components/AskAPIView';
 import WhyForemView from './components/WhyForem/WhyForemView';
 import ServicePage from './components/Services/ServicePage'
 import PersonInformation from './components/WhyForem/PersonInformation';
-import AboutView from './components/WhyForem/AboutView';
 import { LoadingProvider } from './context/LoadingContext';
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
         <Navbar data={{language, setLanguage}}/>
         <div style={{ flex: '1' }}>
         <Routes>
-
           <Route path="/" element={<Home data={{language}} />} />
           <Route path="/whyforem" element={<WhyForemView data={{language}} />} />
           <Route path="/services" element={<Services data={{language}} />} />
@@ -34,17 +32,12 @@ function App() {
           <Route path='/family-office' element={<ServicePage data={{language}} />} />
           <Route path='/investments-portfolio' element={<ServicePage data={{language}} />} />
           <Route path='/custodian-data-aggregation' element={<ServicePage data={{language}} />} />
-          <Route path="/bespoke" element={<AboutView data={{language}} />} />
-          <Route path="/bond-portfolio-optimization" element={<AboutView data={{language}} />} />
-          <Route path="/ai-pond-portfolio" element={<AboutView data={{language}} />} />
           <Route path="/freddy-martinez" element={<PersonInformation data={{language}} />} />
           <Route path="/bernardo-perez" element={<PersonInformation data={{language}} />} />
           <Route path="/michele-di-carlo" element={<PersonInformation data={{language}} />} />
         </Routes>
-        
         </div>
           <FooterView />
-        
         </div>
       </Router>
       </LoadingProvider>

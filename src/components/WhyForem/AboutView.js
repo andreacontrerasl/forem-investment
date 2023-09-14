@@ -9,7 +9,6 @@ import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import IconButton from "@mui/material/IconButton"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import CheckIcon from '@mui/icons-material/Check';
 import { home_data_EN, home_data_ES} from '../../utils/information'
 
 function AboutView(props) {
